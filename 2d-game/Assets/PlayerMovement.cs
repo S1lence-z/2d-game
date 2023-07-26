@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
     private Animator anim;
+    private float dirX = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal");
+        dirX = Input.GetAxisRaw("Horizontal");
         // the multiplication ensures joystick support as the value can vary
         playerBody.velocity = new Vector2(dirX * 7f, playerBody.velocity.y);
 
@@ -25,9 +26,13 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, 14f);
         }
+        AnimationUpdate();
+    }
 
+    private void AnimationUpdate()
+    {
         // animatior transition from idle to running and vice versa
-        if (dirX > 0f) 
+        if (dirX > 0f)
         {
             anim.SetBool("running", true);
         }
