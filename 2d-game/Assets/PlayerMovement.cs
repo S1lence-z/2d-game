@@ -8,7 +8,10 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
 
+    // Variables
     private float dirX = 0f;
+    private float moveSpeed = 7f;
+    private float jumpForce = 14f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +26,11 @@ public class PlayerMovement : MonoBehaviour
     {
         dirX = Input.GetAxisRaw("Horizontal");
         // the multiplication ensures joystick support as the value can vary
-        playerBody.velocity = new Vector2(dirX * 7f, playerBody.velocity.y);
+        playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
         if (Input.GetButtonDown("Jump"))
         {
-            playerBody.velocity = new Vector2(playerBody.velocity.x, 14f);
+            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
         AnimationUpdate();
     }
