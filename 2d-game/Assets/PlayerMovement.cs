@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D playerBody;
     private Animator anim;
+    private SpriteRenderer sprite;
+
     private float dirX = 0f;
 
     // Start is called before the first frame update
@@ -13,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -32,13 +35,15 @@ public class PlayerMovement : MonoBehaviour
     private void AnimationUpdate()
     {
         // animatior transition from idle to running and vice versa
-        if (dirX > 0f)
+        if (dirX > 0f) // when running right
         {
             anim.SetBool("running", true);
+            sprite.flipX = false;
         }
-        else if (dirX < 0f)
+        else if (dirX < 0f) // when running left
         {
             anim.SetBool("running", true);
+            sprite.flipX = true;
         }
         else
         {
