@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
+    // Possible player states
+    private enum PlayerMovementState { idle, running, jumping, falling };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,25 +35,38 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
-        UpdateAnimationState();
+        UpdatePlayerAnimationState();
     }
 
-    private void UpdateAnimationState()
+    private void UpdatePlayerAnimationState()
     {
-        // animatior transition from idle to running and vice versa
-        if (dirX > 0f) // when running right
+        PlayerMovementState state;
+
+        if (dirX > 0f)
         {
-            anim.SetBool("running", true);
+            state = PlayerMovementState.running;
             sprite.flipX = false;
         }
-        else if (dirX < 0f) // when running left
+        else if (dirX < 0f)
         {
-            anim.SetBool("running", true);
+            state = PlayerMovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            state = PlayerMovementState.idle;
         }
+
+        // check for jumping and falling
+        if (playerBody.velocity.y > .1f)
+        {
+            state = PlayerMovementState.jumping;
+        }
+        else if (playerBody.velocity.y < -.1f)
+        {
+            state = PlayerMovementState.falling;
+        }
+        // set the integer value of the enum variable state
+        anim.SetInteger("currentState", (int)state);
     }
 }
