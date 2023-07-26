@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
-        AnimationUpdate();
+        UpdateAnimationState();
     }
 
-    private void AnimationUpdate()
+    private void UpdateAnimationState()
     {
         // animatior transition from idle to running and vice versa
         if (dirX > 0f) // when running right
