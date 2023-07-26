@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     // Variables
     private float dirX = 0f;
-    private float moveSpeed = 7f;
-    private float jumpForce = 14f;
+    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float jumpForce = 14f;
 
     // Start is called before the first frame update
     void Start()
