@@ -27,10 +27,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dirX = Input.GetAxisRaw("Horizontal");
+        // Player movement
+        // Horizontal movement
         // the multiplication ensures joystick support as the value can vary
+        dirX = Input.GetAxisRaw("Horizontal");
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
+        // Vertical movement
         if (Input.GetButtonDown("Jump"))
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
@@ -41,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     private void UpdatePlayerAnimationState()
     {
         PlayerMovementState state;
-
+        // Check if the player is moving to the left or to the right or not at all
         if (dirX > 0f)
         {
             state = PlayerMovementState.running;
@@ -57,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerMovementState.idle;
         }
 
-        // check for jumping and falling
+        // Check for jumping and falling
         if (playerBody.velocity.y > .1f)
         {
             state = PlayerMovementState.jumping;
@@ -66,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerMovementState.falling;
         }
-        // set the integer value of the enum variable state
+        // Set the proper integer value of the enum variable state to enable the correct animation
         anim.SetInteger("currentState", (int)state);
     }
 }
