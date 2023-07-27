@@ -1,4 +1,4 @@
-# 2d-game
+# Space Runner
 
 In this repository, I will be developing my semestral project for the subject programming 2 at MFF UK.
 
