@@ -19,3 +19,10 @@ Obstacles:
 4.	A place where an **obstacle is falling** in an infinite loop
 
 In the process of development I may delete or add some features.
+
+---
+
+# Ideas -> TODO
+
+- **Infinite Mode**: the player goes automatically to the right, platforma spawn in front of him
+- **3 Levels**: make 3 hard-coded levels
