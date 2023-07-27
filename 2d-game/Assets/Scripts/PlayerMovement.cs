@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Objects
     private Rigidbody2D playerBody;
     private Animator anim;
     private SpriteRenderer sprite;
+    private BoxCollider2D boxCollider;
 
     // Variables
     private float dirX = 0f;
+    [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
         playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -34,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
         // Vertical movement
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded())
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
@@ -71,5 +75,10 @@ public class PlayerMovement : MonoBehaviour
         }
         // Set the proper integer value of the enum variable state to enable the correct animation
         anim.SetInteger("currentState", (int)state);
+    }
+
+    private bool isGrounded()
+    {
+        return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);  
     }
 }
