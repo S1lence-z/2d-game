@@ -1584,6 +1584,7 @@ GameObject:
   - component: {fileID: 1683472074}
   - component: {fileID: 1683472075}
   - component: {fileID: 1683472076}
+  - component: {fileID: 1683472077}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1781,6 +1782,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayScore: {fileID: 443161979}
+--- !u!114 &1683472077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683472069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ebd6aadd613214080f9daa2d2b8de7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1865087114
 GameObject:
   m_ObjectHideFlags: 0
@@ -9258,7 +9271,7 @@ GameObject:
   - component: {fileID: 2113711015}
   m_Layer: 0
   m_Name: Spikes
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
