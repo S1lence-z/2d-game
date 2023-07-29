@@ -15,9 +15,7 @@ The player will be controlling a character which can move left, right, up and do
 The main menu of the game will have the options to start the game, go to desktop and there will also be the player's high score of his current game session.
 I will be developing the game here on my personal GitHub and then import it to GitLab.
 
-These items will be in the game:
-1.	**Food** – regenerates 1 HP, the player has 3 HP in total
-2.	**Coins** – the amount of coins picked up during a level run will be the **score of the current session** (possible high score)
+---
 
 # In-game items:
 
