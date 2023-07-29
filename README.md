@@ -1,6 +1,6 @@
 # TODO List
 
-- **Infinite Mode**: the player goes automatically to the right, platforma spawn in front of him
+- **Infinite Mode**: the player goes automatically to the right, platforms spawn in front of him
 - **3 Levels**: make 3 hard-coded levels
 
 ---
