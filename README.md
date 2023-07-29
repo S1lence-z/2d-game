@@ -1,10 +1,3 @@
-# TODO List
-
-- **Infinite Mode**: the player goes automatically to the right, platforms spawn in front of him
-- **3 Levels**: make 3 hard-coded levels
-
----
-
 # Space Runner
 
 In this repository, I will be developing my semestral project for the subject programming 2 at MFF UK.
@@ -31,5 +24,12 @@ I will be developing the game here on my personal GitHub and then import it to G
 
 ## Static objects
 1. **Crates** - static obstacle
+
+---
+
+# Game Modes
+
+- **Infinite Mode**: the player goes automatically to the right, platforms spawn in front of him
+- **3 Levels**: make 3 hard-coded levels
 
 In the process of development I may delete or add some features.
