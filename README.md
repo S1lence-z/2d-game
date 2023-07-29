@@ -16,13 +16,22 @@ The main menu of the game will have the options to start the game, go to desktop
 I will be developing the game here on my personal GitHub and then import it to GitLab.
 
 These items will be in the game:
-1.	**Food** – regenerates 3 HP
+1.	**Food** – regenerates 1 HP, the player has 3 HP in total
 2.	**Coins** – the amount of coins picked up during a level run will be the **score of the current session** (possible high score)
 
-Obstacles:
-1.	**Moving obstacles** (a wheel going back and forth etc.)
-2.	**Static obstacles** which will **can harm** the player (reduce HP)
-3.	**Static obstacles** which **cannot harm** the player (crates etc.)
-4.	A place where an **obstacle is falling** in an infinite loop
+# In-game items:
+
+## Traps
+1. **Spikes** - static trap
+2. **Bouncing spike ball** - moving trap
+3. **Vertically moving spike wheels** - moving trap (falling through a portal)
+4. **Horizontally moving spike wheel** - moving trap
+
+## Collectable Items
+1. **Coins** - picking them up counts as the level's score
+2. **O2 tank** - regenerates 1 HP (3 HP FULL)
+
+## Static objects
+1. **Crates** - static obstacle
 
 In the process of development I may delete or add some features.
