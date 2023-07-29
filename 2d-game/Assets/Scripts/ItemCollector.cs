@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
     private int scoreCount = 0;
+
+    [SerializeField] private Text displayScore;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,6 +16,7 @@ public class ItemCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             scoreCount++;
+            displayScore.text = "Score: " + scoreCount.ToString();
         }
     }
 }
