@@ -7,7 +7,7 @@ public class AutoJump : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Rigidbody2D body;
     [SerializeField] private float jumpForce = 30f;
-    [SerializeField] private float toLeftForce = 0f;
+    [SerializeField] private float horizontalForce = 5f;
     [SerializeField] private LayerMask jumpableGround;
 
     // Start is called before the first frame update
@@ -17,18 +17,27 @@ public class AutoJump : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        if (isGrounded())
+        if (IsGrounded())
         {
-            body.AddForce(Vector2.up * jumpForce);
-            body.AddForce(Vector2.left * toLeftForce);
+            Jump(jumpForce);
+            MoveHorizontally(horizontalForce);
         }
     }
 
-    public bool isGrounded()
+    private bool IsGrounded()
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    private void Jump(float force)
+    {
+        body.AddForce(Vector2.up * force);
+    }
+
+    private void MoveHorizontally(float force)
+    {
+        body.AddForce(Vector2.right * force);
     }
 }
