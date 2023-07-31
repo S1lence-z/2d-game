@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
         // Vertical movement
-        if (Input.GetButtonDown("Jump") && isGrounded())
+        if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("currentState", (int)state);
     }
 
-    private bool isGrounded()
+    private bool IsGrounded()
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
