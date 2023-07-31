@@ -6,7 +6,7 @@ public class AutoJump : MonoBehaviour
 {
     private BoxCollider2D boxCollider;
     private Rigidbody2D body;
-    [SerializeField] private float jumpForce = 30f;
+    [SerializeField] private float verticalForce = 30f;
     [SerializeField] private float horizontalForce = 5f;
     [SerializeField] private LayerMask jumpableGround;
 
@@ -21,7 +21,7 @@ public class AutoJump : MonoBehaviour
     {
         if (IsGrounded())
         {
-            Jump(jumpForce);
+            MoveVertically(verticalForce);
             MoveHorizontally(horizontalForce);
         }
     }
@@ -31,7 +31,7 @@ public class AutoJump : MonoBehaviour
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
-    private void Jump(float force)
+    private void MoveVertically(float force)
     {
         body.AddForce(Vector2.up * force);
     }
