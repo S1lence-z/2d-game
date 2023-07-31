@@ -41249,8 +41249,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &2039512240
 BoxCollider2D:
@@ -41309,11 +41309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02fe00ad76bdfa47865d3735c69a323, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 30
-  horizontalForce: 5
-  jumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
+  verticalForce: 15
+  horizontalForce: 0
 --- !u!1001 &2043588776
 PrefabInstance:
   m_ObjectHideFlags: 0
