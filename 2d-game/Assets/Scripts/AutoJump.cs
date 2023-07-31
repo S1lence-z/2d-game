@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : MonoBehaviour
+public class AutoJump : MonoBehaviour
 {
     private BoxCollider2D boxCollider;
     private Rigidbody2D body;
@@ -23,6 +23,7 @@ public class Jump : MonoBehaviour
         if (isGrounded())
         {
             body.AddForce(Vector2.up * jumpForce);
+            body.AddForce(Vector2.left * toLeftForce);
         }
     }
 
