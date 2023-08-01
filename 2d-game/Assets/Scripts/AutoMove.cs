@@ -5,8 +5,9 @@ using UnityEngine;
 public class AutoMove : MonoBehaviour
 {
     private Rigidbody2D body;
-    [SerializeField] private float verticalForce = 5f;
-    [SerializeField] private float horizontalForce = 0f;
+    [SerializeField] private float verticalForce;
+    [SerializeField] private float horizontalForce;
+    private bool callUpdate = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -14,9 +15,21 @@ public class AutoMove : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (callUpdate)
+        {
+            Move(horizontalForce, verticalForce);
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Terrain")
+        if (verticalForce <= .1f)
+        {
+            callUpdate = true;
+        }
+        else
         {
             Move(horizontalForce, verticalForce);
         }

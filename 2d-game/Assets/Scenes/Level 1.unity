@@ -41456,6 +41456,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jumping Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6731254051015575391, guid: c5ae536041ba8e5489382683723d700d, type: 3}
+      propertyPath: verticalForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731254051015575391, guid: c5ae536041ba8e5489382683723d700d, type: 3}
+      propertyPath: horizontalForce
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
