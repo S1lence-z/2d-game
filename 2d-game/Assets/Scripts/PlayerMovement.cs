@@ -29,11 +29,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // Player movement
-        // Horizontal movement
-        // the multiplication ensures joystick support as the value can vary
+        UpdatePlayerMovement();
+        UpdatePlayerAnimationState();
+    }
+
+    private void UpdatePlayerMovement()
+    {
+        // Horizontal movement (the multiplication ensures joystick support as the value can vary)
         dirX = Input.GetAxisRaw("Horizontal");
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
@@ -42,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
         {
             playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
         }
-        UpdatePlayerAnimationState();
+    }
+    private bool IsGrounded()
+    {
+        return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 
     private void UpdatePlayerAnimationState()
@@ -77,8 +84,4 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("currentState", (int)state);
     }
 
-    private bool IsGrounded()
-    {
-        return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
-    }
 }
