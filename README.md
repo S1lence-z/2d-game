@@ -14,7 +14,7 @@ I will be developing the game here on my personal GitHub and then import it to G
 
 ---
 
-# How to run the program
+# Installation
 
 ---
 
