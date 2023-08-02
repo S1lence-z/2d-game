@@ -39,4 +39,5 @@ The controls for Space Runner are straightforward:
 # Other documentation
 
 **User documentation:** link
+
 **Programming documentation:** link
