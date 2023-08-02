@@ -36,7 +36,7 @@ The controls for Space Runner are straightforward:
 
 ---
 
-# Other documentation
+# Additional documentation
 
 **User documentation:** [User Docs](./docs/user_docs.md)
 
