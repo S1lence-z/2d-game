@@ -24,7 +24,7 @@ To play Space Runner, follow these steps:
 
 1. Clone this repository to your local machine or download it as a ZIP file.
    ```bash
-   git clone https://github.com/your-username/space-runner.git
+   git clone https://github.com/S1lence-z/2d-game
    ```
 2. Open Unity and select "Open Project." Navigate to the directory where you cloned or extracted the game, and Unity will load the project for you.
 
