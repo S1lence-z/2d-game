@@ -12,7 +12,7 @@ I will be developing the game here on my personal GitHub and then import it to G
 
 Before installing and running the game, ensure that you have the following software and components:
 
-1. **Unity Game Engine:** Ensure you have the latest version of Unity installed on your system. The game was developed using Unity [version XYZ], but newer versions should also work.
+1. **Unity Game Engine:** Ensure you have the latest version of Unity installed on your system. The game was developed using Unity [2022.3.1f1], but newer versions should also work.
 
 2. **.NET Runtime:** The game requires the .NET runtime to be installed on your computer. If you don't have it installed, you can download it from the official Microsoft website: [Download .NET Runtime](https://dotnet.microsoft.com/download/dotnet)
 
