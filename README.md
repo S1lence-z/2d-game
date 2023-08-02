@@ -8,8 +8,6 @@ The player will be controlling a character which can move left, right, up and do
 The main menu of the game will have the options to start the game, go to desktop and there will also be the player's high score of his current game session.
 I will be developing the game here on my personal GitHub and then import it to GitLab.
 
----
-
 # Prerequisites
 
 Before installing and running the game, ensure that you have the following software and components:
@@ -35,3 +33,10 @@ The controls for Space Runner are straightforward:
 - **Move Left:** [A] key or Left arrow key
 - **Move Right:** [D] key or Right arrow key
 - **Jump:** [Space] key
+
+---
+
+# Other documentation
+
+**User documentation:** link
+**Programming documentation:** link
