@@ -1,4 +1,4 @@
-# Space Runner
+# Space Runner: First Contact
 
 In this repository, I will be developing my semestral project for the subject programming 2 at MFF UK.
 
