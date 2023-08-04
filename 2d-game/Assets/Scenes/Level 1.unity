@@ -27479,7 +27479,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9340d1c0732c27643a47e01b39d9d764, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -27589,7 +27589,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.006880522, y: -0.22705829}
+  m_Offset: {x: 0.030129552, y: -0.24100763}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -27600,7 +27600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1605725, y: 1.3532281}
+  m_Size: {x: 0.9652803, y: 1.3253294}
   m_EdgeRadius: 0
 --- !u!114 &1683472074
 MonoBehaviour:
@@ -66146,7 +66146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3949185403947672546, guid: c5ae536041ba8e5489382683723d700d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.68
+      value: 17.17
       objectReference: {fileID: 0}
     - target: {fileID: 3949185403947672546, guid: c5ae536041ba8e5489382683723d700d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66270,6 +66270,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 386702686}
     m_Modifications:
+    - target: {fileID: 5924980388512435, guid: 698ae6907e13790438b0ea2ed0646432, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 255083007150335866, guid: 698ae6907e13790438b0ea2ed0646432, type: 3}
       propertyPath: m_UseOneWay
       value: 0
