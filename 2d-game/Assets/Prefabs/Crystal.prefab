@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6810152856995839668}
   - component: {fileID: 3935904181444667938}
   m_Layer: 0
-  m_Name: Coins
+  m_Name: Crystal
   m_TagString: Score Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
