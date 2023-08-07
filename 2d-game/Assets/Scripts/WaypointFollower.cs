@@ -6,7 +6,7 @@ public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
-    [SerializeField] private float platformSpeed = 2f;
+    [SerializeField] private float objectSpeed = 2f;
 
     private void Update()
     {
@@ -18,6 +18,6 @@ public class WaypointFollower : MonoBehaviour
                 currentWaypointIndex = 0;
             }
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, platformSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, objectSpeed * Time.deltaTime);
     }
 }
