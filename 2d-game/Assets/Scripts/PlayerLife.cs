@@ -9,7 +9,6 @@ public class PlayerLife : MonoBehaviour
 {
     private GameObject player;
     private Animator anim;
-    private Animator playerAnim;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private float deathDelay = 2f;
@@ -22,7 +21,6 @@ public class PlayerLife : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        playerAnim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         startPos = player.transform.position;
@@ -57,7 +55,7 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
-            StartCoroutine(LoadSceneWithDelay("Start Screen"));
+            StartCoroutine(LoadSceneWithDelay("Game Over"));
             return;
         }
         else
@@ -80,7 +78,7 @@ public class PlayerLife : MonoBehaviour
         anim.ResetTrigger("death");
         boxCollider.enabled = true;
         rigidBody.gravityScale = 3f;
-        playerAnim.Play("Player_Idle");
+        anim.Play("Player_Idle");
         player.transform.position = startPos;
     }
 
