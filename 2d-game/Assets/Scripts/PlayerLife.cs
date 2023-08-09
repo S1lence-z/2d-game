@@ -9,12 +9,16 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private bool isDead = false;
+    private int totalHp = 3;
+    [SerializeField] private float deathDelay = 2f;
+    private string currentSceneName;
 
-    void Start()
+    private void Start()
     {
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        currentSceneName = SceneManager.GetActiveScene().name;
     }
 
     private void Update()
@@ -41,11 +45,23 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         isDead = true;
+        totalHp--;
         anim.SetTrigger("death");
+        if (totalHp <= 0)
+        {
+            StartCoroutine(LoadSceneWithDelay("Start Screen"));
+            return;
+        }
+        else
+        {
+            StartCoroutine(LoadSceneWithDelay(currentSceneName));
+            return;
+        }
+    }
+    private IEnumerator LoadSceneWithDelay(string sceneName)
+    {
+        yield return new WaitForSeconds(deathDelay);
+        SceneManager.LoadScene(sceneName);
     }
 
-    private void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
