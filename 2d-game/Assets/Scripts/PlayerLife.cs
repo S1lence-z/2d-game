@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class PlayerLife : MonoBehaviour
     private BoxCollider2D boxCollider;
     private bool isDead = false;
     private int totalHp = 3;
-    [SerializeField] private float deathDelay = 2f;
     private string currentSceneName;
+    [SerializeField] private float deathDelay = 2f;
+    [SerializeField] private Text displayHp;
 
     private void Start()
     {
@@ -45,7 +47,7 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        totalHp--;
+        UpdateHp();
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
@@ -58,6 +60,13 @@ public class PlayerLife : MonoBehaviour
             return;
         }
     }
+
+    private void UpdateHp()
+    {
+        totalHp--;
+        displayHp.text = "HP: " + totalHp.ToString();
+    }
+
     private IEnumerator LoadSceneWithDelay(string sceneName)
     {
         yield return new WaitForSeconds(deathDelay);
