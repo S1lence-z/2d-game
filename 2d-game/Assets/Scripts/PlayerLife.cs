@@ -1,26 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
+    private GameObject player;
     private Animator anim;
+    private Animator playerAnim;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
+    private float deathDelay = 2f;
+    [SerializeField] private Text displayHP;
     private bool isDead = false;
-    private int totalHp = 3;
-    private string currentSceneName;
-    [SerializeField] private float deathDelay = 2f;
-    [SerializeField] private Text displayHp;
+    private int totalHp;
+    private Vector3 startPos;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
+        playerAnim = player.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
-        currentSceneName = SceneManager.GetActiveScene().name;
+        startPos = player.transform.position;
+        totalHp = 3;
     }
 
     private void Update()
@@ -31,7 +37,7 @@ public class PlayerLife : MonoBehaviour
             rigidBody.gravityScale = 0f;
             if (boxCollider != null)
             {
-                Destroy(boxCollider);
+                boxCollider.enabled = false;
             }
         }
     }
@@ -56,7 +62,7 @@ public class PlayerLife : MonoBehaviour
         }
         else
         {
-            StartCoroutine(LoadSceneWithDelay(currentSceneName));
+            StartCoroutine(RespawnPlayer());
             return;
         }
     }
@@ -64,7 +70,18 @@ public class PlayerLife : MonoBehaviour
     private void UpdateHp()
     {
         totalHp--;
-        displayHp.text = "HP: " + totalHp.ToString();
+        displayHP.text = "HP: " + totalHp.ToString();
+    }
+
+    private IEnumerator RespawnPlayer()
+    {
+        yield return new WaitForSeconds(deathDelay);
+        isDead = false;
+        anim.ResetTrigger("death");
+        boxCollider.enabled = true;
+        rigidBody.gravityScale = 3f;
+        playerAnim.Play("Player_Idle");
+        player.transform.position = startPos;
     }
 
     private IEnumerator LoadSceneWithDelay(string sceneName)
@@ -72,5 +89,4 @@ public class PlayerLife : MonoBehaviour
         yield return new WaitForSeconds(deathDelay);
         SceneManager.LoadScene(sceneName);
     }
-
 }
