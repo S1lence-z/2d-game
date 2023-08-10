@@ -67075,11 +67075,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8286606320638162358, guid: 41f461284cf6be24e8504fe1e8e4ee32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7
+      value: 41.26
       objectReference: {fileID: 0}
     - target: {fileID: 8286606320638162358, guid: 41f461284cf6be24e8504fe1e8e4ee32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.4
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: 8286606320638162358, guid: 41f461284cf6be24e8504fe1e8e4ee32, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67118,6 +67118,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f461284cf6be24e8504fe1e8e4ee32, type: 3}
+--- !u!1001 &2577009561657305846
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4735846972845091481, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_Name
+      value: Trampoline
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 45.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081664265027581839, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bdbed4dd32e999945bb14d38822704d0, type: 3}
 --- !u!1001 &3322723331849058611
 PrefabInstance:
   m_ObjectHideFlags: 0
