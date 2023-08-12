@@ -10,16 +10,8 @@ public class FinalScores : MonoBehaviour
 
     private void Update()
     {
-        UpdateHighScore();
+        GlobalSettings.UpdateHighScore();
         displayCurrentScore.text = "Current Score: " + GlobalSettings.currentScore.ToString();
         displayHighScore.text = "High Score: " + GlobalSettings.highScore.ToString();
-    }
-
-    private void UpdateHighScore()
-    {
-        if (GlobalSettings.currentScore > GlobalSettings.highScore)
-        {
-            GlobalSettings.highScore = GlobalSettings.currentScore;
-        }
     }
 }

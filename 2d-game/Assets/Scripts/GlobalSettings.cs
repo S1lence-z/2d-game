@@ -13,4 +13,12 @@ public class GlobalSettings : MonoBehaviour
     {
         chosenGameMode = gameModes[gameModeIndex];
     }
+
+    public static void UpdateHighScore()
+    {
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+        }
+    }
 }
