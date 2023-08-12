@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Finish : MonoBehaviour
+public class FinishLevel : MonoBehaviour
 {
     private bool levelCompleted = false;
 
