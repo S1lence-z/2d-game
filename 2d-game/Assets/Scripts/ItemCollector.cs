@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int scoreCount = 0;
+    private static int scoreCount = 0;
     [SerializeField] private Text displayScore;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,10 +22,21 @@ public class ItemCollector : MonoBehaviour
     private void Update()
     {
         SetScoreGlobally();
+        UpdateDisplayScore();
     }
 
     private void SetScoreGlobally()
     {
         GlobalSettings.currentScore = scoreCount;
+    }
+
+    private void UpdateDisplayScore()
+    {
+        displayScore.text = "Score: " + scoreCount.ToString();
+    }
+
+    public static void ResetScoreCount()
+    {
+        scoreCount = 0;
     }
 }

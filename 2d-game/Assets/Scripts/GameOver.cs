@@ -8,6 +8,7 @@ public class GameOver : MonoBehaviour
     public void GoToStartMenu()
     {
         SceneManager.LoadScene("Start Screen");
+        ResetScoreCounter();
     }
 
     public void ExitGame()
@@ -25,5 +26,11 @@ public class GameOver : MonoBehaviour
         {
             StartGame.StartInfiniteMode();
         }
+        ResetScoreCounter();
+    }
+
+    private void ResetScoreCounter()
+    {
+        ItemCollector.ResetScoreCount();
     }
 }
