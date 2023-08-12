@@ -6,6 +6,8 @@ public class GlobalSettings : MonoBehaviour
 {
     public static string[] gameModes = { "levels", "infinite" };
     public static string chosenGameMode;
+    public static int currentScore = 0;
+    public static int highScore = 0;
 
     public void SetGameMode(int gameModeIndex)
     {
