@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 49695363}
   - component: {fileID: 49695362}
   - component: {fileID: 49695365}
+  - component: {fileID: 49695366}
   m_Layer: 5
   m_Name: Infinite Mode
   m_TagString: Untagged
@@ -220,6 +221,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 49695366}
+        m_TargetAssemblyTypeName: GlobalSettings, Assembly-CSharp
+        m_MethodName: SetGameMode
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &49695363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +281,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6473a5931668678459a1a2af3bae926e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &49695366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49695360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94312f7ce9261c445a5d96e7962bf590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &271549657
@@ -386,6 +411,7 @@ GameObject:
   - component: {fileID: 596762381}
   - component: {fileID: 596762380}
   - component: {fileID: 596762383}
+  - component: {fileID: 596762384}
   m_Layer: 5
   m_Name: Levels Mode
   m_TagString: Untagged
@@ -470,6 +496,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 596762384}
+        m_TargetAssemblyTypeName: GlobalSettings, Assembly-CSharp
+        m_MethodName: SetGameMode
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &596762381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +556,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6473a5931668678459a1a2af3bae926e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &596762384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596762378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94312f7ce9261c445a5d96e7962bf590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &625913729
