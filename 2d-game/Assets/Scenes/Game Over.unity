@@ -923,7 +923,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 998529505}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
@@ -981,7 +981,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 998529499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6473a5931668678459a1a2af3bae926e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c99379873728984d80fc92a330aadc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1729054073
