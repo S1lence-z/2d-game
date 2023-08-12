@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public void StartLevelsMode()
+    public static void StartLevelsMode()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level 1");
     }
 
-    public void StartInfiniteMode()
+    public static void StartInfiniteMode()
     {
         print("To be implemented!");
     }
