@@ -90,7 +90,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9982d970a04144883140739c0feea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   windForce: 70
+  vectorUp: 0
 --- !u!1 &7031559424505430095
 GameObject:
   m_ObjectHideFlags: 0

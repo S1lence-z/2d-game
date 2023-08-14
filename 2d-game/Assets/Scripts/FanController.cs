@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class FanController : MonoBehaviour
 {
-    private GameObject player;
+    [SerializeField] private GameObject player;
     private Rigidbody2D playerRb;
     [SerializeField] private float windForce = 25f;
+    [SerializeField] private bool vectorUp = true;
+    private Vector2 fanDirection;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         playerRb = player.GetComponent<Rigidbody2D>();
     }
 
@@ -18,7 +19,20 @@ public class FanController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Vector2 fanDirection = transform.up.normalized;
+            PushPlayer();
+        }
+    }
+
+    private void PushPlayer()
+    {
+        if (vectorUp)
+        {
+            fanDirection = transform.up.normalized;
+            playerRb.AddForce(fanDirection * windForce);
+        }
+        else
+        {
+            fanDirection = -transform.up.normalized;
             playerRb.AddForce(fanDirection * windForce);
         }
     }
