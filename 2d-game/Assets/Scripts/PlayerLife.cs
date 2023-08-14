@@ -14,7 +14,7 @@ public class PlayerLife : MonoBehaviour
     private float deathDelay = 2f;
     [SerializeField] private Text displayHP;
     private bool isDead = false;
-    private int totalHp;
+    private static int totalHp;
     private Vector3 startPos;
 
     private void Start()
@@ -38,6 +38,7 @@ public class PlayerLife : MonoBehaviour
                 boxCollider.enabled = false;
             }
         }
+        displayHP.text = "HP: " + totalHp.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,7 +52,7 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        UpdateHp();
+        DeacreaseHp();
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
@@ -65,10 +66,13 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void UpdateHp()
+    private void DeacreaseHp()
     {
         totalHp--;
-        displayHP.text = "HP: " + totalHp.ToString();
+    }
+    public static void IncreaseHp()
+    {
+        totalHp++;
     }
 
     private IEnumerator RespawnPlayer()
