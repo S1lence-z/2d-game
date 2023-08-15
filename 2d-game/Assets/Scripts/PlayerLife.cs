@@ -52,7 +52,7 @@ public class PlayerLife : MonoBehaviour
     private void Die()
     {
         isDead = true;
-        DeacreaseHp();
+        DecreaseHp();
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
@@ -66,10 +66,11 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    private void DeacreaseHp()
+    private void DecreaseHp()
     {
         totalHp--;
     }
+
     public static void IncreaseHp()
     {
         totalHp++;
