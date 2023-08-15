@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6163798204690342286}
   - component: {fileID: 5412690760833530771}
   - component: {fileID: 7707328110985292550}
-  - component: {fileID: 2923957903219248752}
+  - component: {fileID: 2117737685597344403}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6487060415781305660
 SpriteRenderer:
@@ -212,7 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ebd6aadd613214080f9daa2d2b8de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2923957903219248752
+  displayHP: {fileID: 0}
+--- !u!114 &2117737685597344403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +222,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8032379387062743086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952d1a8e6c2ae3640967c9ea82994c27, type: 3}
+  m_Script: {fileID: 11500000, guid: 94312f7ce9261c445a5d96e7962bf590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displayScore: {fileID: 0}

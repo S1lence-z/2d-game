@@ -31,6 +31,6 @@ public class GameOver : MonoBehaviour
 
     private void ResetScoreCounter()
     {
-        ItemCollector.ResetScoreCount();
+        GlobalSettings.ResetScoreCount();
     }
 }

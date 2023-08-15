@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour
 {
     public enum Type
     {
         HealingOrb,
-        DoubleJump
+        DoubleJump,
+        ScoreItem
     }
 
     public Type type;
@@ -30,6 +32,10 @@ public class PowerUp : MonoBehaviour
 
             case Type.DoubleJump:
                 PlayerMovement.EnableDoubleJump();
+                break;
+
+            case Type.ScoreItem:
+                GlobalSettings.AddScore();
                 break;
         }
         Destroy(gameObject);
