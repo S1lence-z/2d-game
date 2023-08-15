@@ -29,6 +29,7 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.DoubleJump:
+                PlayerMovement.EnableDoubleJump();
                 break;
         }
         Destroy(gameObject);
