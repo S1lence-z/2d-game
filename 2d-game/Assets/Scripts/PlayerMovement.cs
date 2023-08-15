@@ -41,10 +41,10 @@ public class PlayerMovement : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
-        // Jumping
+        // Single Jump
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+            Jump();
             doubleJumpReady = true;
         }
         // Double Jump
@@ -52,10 +52,15 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") && !IsGrounded() && doubleJumpReady)
             {
-                playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+                Jump();
                 doubleJumpReady = false;
             }
         }
+    }
+
+    private void Jump()
+    {
+        playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
     }
 
     public static void EnableDoubleJump()
