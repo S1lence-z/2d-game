@@ -12,14 +12,14 @@ public class PlayerMovement : MonoBehaviour
 
     // Variables
     private float dirX = 0f;
-    private static bool doubleJumpEnabled = false;
+    private static bool doubleJumpEnabled = true;
     private bool doubleJumpReady = false;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
 
     // Possible player states
-    private enum PlayerMovementState { idle, running, jumping, falling };
+    private enum PlayerMovementState { idle, running, jumping, falling , doubleJumping };
 
     private void Start()
     {
@@ -44,16 +44,16 @@ public class PlayerMovement : MonoBehaviour
         // Single Jump
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-            Jump();
             doubleJumpReady = true;
+            Jump();
         }
         // Double Jump
         if (doubleJumpEnabled)
         {
             if (Input.GetButtonDown("Jump") && !IsGrounded() && doubleJumpReady)
             {
-                Jump();
                 doubleJumpReady = false;
+                Jump();
             }
         }
     }
@@ -93,7 +93,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Check for jumping and falling
-        if (playerBody.velocity.y > .1f)
+        if (doubleJumpEnabled && !doubleJumpReady && !IsGrounded())
+        {
+            state = PlayerMovementState.doubleJumping;
+        }
+        else if (playerBody.velocity.y > .1f)
         {
             state = PlayerMovementState.jumping;
         }
