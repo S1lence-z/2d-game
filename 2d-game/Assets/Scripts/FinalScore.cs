@@ -8,9 +8,8 @@ public class FinalScores : MonoBehaviour
     [SerializeField] private Text displayCurrentScore;
     [SerializeField] private Text displayHighScore;
 
-    private void Update()
+    private void Start()
     {
-        GlobalSettings.UpdateHighScore();
         displayCurrentScore.text = "Current Score: " + GlobalSettings.currentScore.ToString();
         displayHighScore.text = "High Score: " + GlobalSettings.highScore.ToString();
     }
