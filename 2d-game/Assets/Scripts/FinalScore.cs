@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FinalScores : MonoBehaviour
+public class FinalScore : MonoBehaviour
 {
     [SerializeField] private Text displayCurrentScore;
     [SerializeField] private Text displayHighScore;
