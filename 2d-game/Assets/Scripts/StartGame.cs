@@ -13,7 +13,7 @@ public class StartGame : MonoBehaviour
 
     public static void StartInfiniteMode()
     {
-        print("To be implemented!");
+        SceneManager.LoadScene("Infinite Level");
         GlobalSettings.SetGameMode(1);
     }
 }
