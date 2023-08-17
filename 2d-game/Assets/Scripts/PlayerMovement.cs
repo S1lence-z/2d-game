@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Variables
     private float dirX = 0f;
-    private static bool doubleJumpEnabled = true;
+    private static bool doubleJumpEnabled = false;
     private bool doubleJumpReady = false;
     private bool playerDoubleJumped = false;
     [SerializeField] private LayerMask jumpableGround;
