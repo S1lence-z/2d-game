@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 828585824802471804}
   - component: {fileID: 3908317902827848407}
   m_Layer: 0
-  m_Name: CrystalOrb
+  m_Name: CrystalHeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683e2c7860060c54da511f61e299f09f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 0
