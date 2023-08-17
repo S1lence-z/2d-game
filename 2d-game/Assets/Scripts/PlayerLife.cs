@@ -12,10 +12,10 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private float deathDelay = 2f;
-    [SerializeField] private Text displayHP;
     private bool isDead = false;
     private static int totalHp;
     private Vector3 startPos;
+    [SerializeField] private Text displayHP;
 
     private void Start()
     {
@@ -56,7 +56,7 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
-            StartCoroutine(LoadSceneWithDelay("Game Over"));
+            StartCoroutine(Extensions.LoadSceneWithDelay("Game Over", deathDelay));
             return;
         }
         else
@@ -85,11 +85,5 @@ public class PlayerLife : MonoBehaviour
         rigidBody.gravityScale = 3f;
         anim.Play("Player_Idle");
         player.transform.position = startPos;
-    }
-
-    private IEnumerator LoadSceneWithDelay(string sceneName)
-    {
-        yield return new WaitForSeconds(deathDelay);
-        SceneManager.LoadScene(sceneName);
     }
 }
