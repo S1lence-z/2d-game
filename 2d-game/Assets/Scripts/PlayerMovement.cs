@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,9 +15,11 @@ public class PlayerMovement : MonoBehaviour
     private float dirX = 0f;
     private static bool doubleJumpEnabled = true;
     private bool doubleJumpReady = false;
+    private bool playerDoubleJumped = false;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float secondJumpQuotient = .7f;
 
     // Possible player states
     private enum PlayerMovementState { idle, running, jumping, falling , doubleJumping };
@@ -41,26 +44,24 @@ public class PlayerMovement : MonoBehaviour
         dirX = Input.GetAxisRaw("Horizontal");
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
-        // Single Jump
+        // Jumping Logic
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             doubleJumpReady = true;
-            Jump();
+            Jump(jumpForce, 1f);
         }
-        // Double Jump
-        if (doubleJumpEnabled)
+        // Double Jump Logic
+        if (Input.GetButtonDown("Jump") && doubleJumpEnabled && doubleJumpReady && !IsGrounded())
         {
-            if (Input.GetButtonDown("Jump") && !IsGrounded() && doubleJumpReady)
-            {
-                doubleJumpReady = false;
-                Jump();
-            }
+            doubleJumpReady = false;
+            playerDoubleJumped = true;
+            Jump(jumpForce, secondJumpQuotient);
         }
     }
 
-    private void Jump()
+    private void Jump(float jumpingForce, float jumpingQuotient)
     {
-        playerBody.velocity = new Vector2(playerBody.velocity.x, jumpForce);
+        playerBody.velocity = new Vector2(playerBody.velocity.x, jumpingForce * jumpingQuotient);
     }
 
     public static void EnableDoubleJump()
@@ -91,19 +92,19 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerMovementState.idle;
         }
-
         // Check for jumping and falling
-        if (doubleJumpEnabled && !doubleJumpReady && !IsGrounded())
+        if (playerBody.velocity.y < -.1)
         {
-            state = PlayerMovementState.doubleJumping;
+            state = PlayerMovementState.falling;
         }
         else if (playerBody.velocity.y > .1f)
         {
             state = PlayerMovementState.jumping;
         }
-        else if (playerBody.velocity.y < -.1f)
+        if (doubleJumpEnabled && !doubleJumpReady && playerDoubleJumped && !IsGrounded() )
         {
-            state = PlayerMovementState.falling;
+            state = PlayerMovementState.doubleJumping;
+            playerDoubleJumped = false;
         }
         // Set the proper integer value of the enum variable state to enable the correct animation
         anim.SetInteger("currentState", (int)state);
