@@ -37,7 +37,10 @@ public class InfinitePlayerMovement : MonoBehaviour
     private void UpdatePlayerMovement()
     {
         // Horizontal movement - the player moves automatically to the right
-        playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+        }
 
         // Jumping Logic
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -73,6 +76,7 @@ public class InfinitePlayerMovement : MonoBehaviour
     {
         PlayerMovementState state;
         // Check for running, jumping and falling
+
         if (playerBody.velocity.y < -.1)
         {
             state = PlayerMovementState.falling;
@@ -81,10 +85,15 @@ public class InfinitePlayerMovement : MonoBehaviour
         {
             state = PlayerMovementState.jumping;
         }
-        else
+        else if (playerBody.velocity.x > .1f)
         {
             state = PlayerMovementState.running;
         }
+        else
+        {
+            state = PlayerMovementState.idle;
+        }
+        // Check for double jumping
         if (doubleJumpEnabled && !doubleJumpReady && playerDoubleJumped && !IsGrounded())
         {
             state = PlayerMovementState.doubleJumping;
