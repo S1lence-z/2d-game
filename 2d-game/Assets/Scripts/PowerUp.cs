@@ -42,7 +42,7 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.ScoreItem:
-                GlobalSettings.AddScore();
+                GameScore.AddScore();
                 break;
         }
         Destroy(gameObject);

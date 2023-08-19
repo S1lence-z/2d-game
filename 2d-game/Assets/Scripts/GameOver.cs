@@ -30,7 +30,7 @@ public class GameOver : MonoBehaviour
     }
     private void ResetAllSettings()
     {
-        GlobalSettings.ResetScoreCount();
+        GameScore.ResetScoreCount();
         PlayerMovement.DisableDoubleJump();
         InfinitePlayerMovement.DisableDoubleJump();
     }
