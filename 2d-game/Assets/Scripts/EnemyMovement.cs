@@ -33,10 +33,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            anim.SetBool("enemyIdle", false);
-        }
         if (verticalForce <= .1f)
         {
             callUpdate = true;
@@ -44,10 +40,6 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             Move(horizontalForce, verticalForce);
-        }
-        if (prevPos == currPos)
-        {
-            TurnAround();
         }
     }
 
@@ -62,7 +54,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        anim.SetBool("enemyIdle", true);
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            anim.SetTrigger("playerHit");
+        }
+        StartCoroutine(Extensions.LoadAnimationWithDelay(anim, "Slime_Idle", .7f));
     }
 
     private void Move(float forceX, float forceY)

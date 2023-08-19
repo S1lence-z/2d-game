@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8906158219049788812}
   - component: {fileID: 6631821140387370031}
   - component: {fileID: 7536312790095926087}
-  - component: {fileID: 6731254051015575391}
   - component: {fileID: 6569130311233611939}
+  - component: {fileID: 2366333667001809955}
   m_Layer: 0
   m_Name: Jumping Enemy
   m_TagString: Trap
@@ -160,20 +160,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6455421, y: 1.4160738}
   m_EdgeRadius: 0
---- !u!114 &6731254051015575391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5937190266650405680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02fe00ad76bdfa47865d3735c69a323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  verticalForce: 15
-  horizontalForce: 0
 --- !u!95 &6569130311233611939
 Animator:
   serializedVersion: 5
@@ -195,3 +181,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2366333667001809955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937190266650405680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b02fe00ad76bdfa47865d3735c69a323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalForce: 0
+  horizontalForce: 0
