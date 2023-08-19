@@ -17,4 +17,10 @@ public static class Extensions
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
     }
+
+    public static IEnumerator LoadAnimationWithDelay(Animator animator, string animationName, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        animator.Play(animationName);
+    }
 }
