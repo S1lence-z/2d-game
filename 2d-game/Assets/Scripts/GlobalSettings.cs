@@ -24,7 +24,7 @@ public class GlobalSettings : MonoBehaviour
 
     private void UpdateHighScore()
     {
-        highScore = (currentScore >  highScore) ? currentScore : highScore;
+        highScore = (currentScore > highScore) ? currentScore : highScore;
     }
 
     private void UpdateDisplayScore()
