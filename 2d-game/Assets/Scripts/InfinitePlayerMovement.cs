@@ -64,7 +64,12 @@ public class InfinitePlayerMovement : MonoBehaviour
 
     public static void EnableDoubleJump()
     {
-        doubleJumpEnabled = !doubleJumpEnabled;
+        doubleJumpEnabled = true;
+    }
+
+    public static void DisableDoubleJump()
+    {
+        doubleJumpEnabled = false;
     }
 
     private bool IsGrounded()
