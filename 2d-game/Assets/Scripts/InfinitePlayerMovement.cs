@@ -72,7 +72,7 @@ public class InfinitePlayerMovement : MonoBehaviour
     private void UpdatePlayerAnimationState()
     {
         PlayerMovementState state;
-        // Check for jumping and falling
+        // Check for running, jumping and falling
         if (playerBody.velocity.y < -.1)
         {
             state = PlayerMovementState.falling;
