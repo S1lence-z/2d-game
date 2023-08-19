@@ -31,7 +31,14 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.DoubleJump:
-                PlayerMovement.EnableDoubleJump();
+                if (GlobalSettings.chosenGameMode == "levels")
+                {
+                    PlayerMovement.EnableDoubleJump();
+                }
+                else
+                {
+                    InfinitePlayerMovement.EnableDoubleJump();
+                }
                 break;
 
             case Type.ScoreItem:
