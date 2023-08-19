@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float verticalForce;
     [SerializeField] private float horizontalForce;
     private bool callUpdate = false;
-    private bool movingRight = true;
+    private bool movingRight = false;
     private Vector3 prevPos;
     private Vector3 currPos;
 
