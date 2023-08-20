@@ -141,7 +141,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2366333667001809955, guid: c5ae536041ba8e5489382683723d700d, type: 3}
       propertyPath: horizontalForce
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3949185403947672546, guid: c5ae536041ba8e5489382683723d700d, type: 3}
       propertyPath: m_RootOrder
