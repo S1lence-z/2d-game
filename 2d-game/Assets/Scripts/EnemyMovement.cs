@@ -82,7 +82,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!alreadyJumped)
         {
-            body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
+            Walk(forceX, forceY);
             alreadyJumped = true;
         }
     }
