@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    private const float playerDistanceSpawnLevelPart = 200f;
+    private const float playerDistanceSpawnLevelPart = 100f;
     [SerializeField] private Transform levelPartStart;
     [SerializeField] private List<Transform> levelPartList;
     [SerializeField] private GameObject player;
