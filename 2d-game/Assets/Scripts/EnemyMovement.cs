@@ -9,46 +9,100 @@ public class EnemyMovement : MonoBehaviour
     private Animator anim;
     [SerializeField] private float verticalForce;
     [SerializeField] private float horizontalForce;
-    private bool callUpdate = false;
     private bool movingRight = false;
-    private Vector3 prevPos;
-    private Vector3 currPos;
+    private bool alreadyJumped = false;
+    private movementType movement;
+
+    private enum movementType 
+    { 
+        walking, jumping, jumpWalking
+    };
 
     private void Start()
     {
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        prevPos = Vector3.zero;
-        currPos = transform.position;
     }
 
     private void Update()
     {
-        if (callUpdate)
+        UpdateMovementState();
+        MakePlayerMove();
+    }
+
+    private void UpdateMovementState()
+    {
+        if (horizontalForce != 0 && verticalForce == 0)
         {
-            Move(horizontalForce, verticalForce);
+            movement = movementType.walking;
+        }
+        else if (horizontalForce == 0 && verticalForce != 0)
+        {
+            movement = movementType.jumping;
+        }
+        else if (horizontalForce != 0 && verticalForce != 0)
+        {
+            movement = movementType.jumpWalking;
         }
     }
+    private void MakePlayerMove()
+    {
+        switch(movement)
+        {
+            case movementType.walking:
+                Walk(horizontalForce, verticalForce);
+                break;
+
+            case movementType.jumping:
+                Jump(horizontalForce, verticalForce);
+                break;
+
+            case movementType.jumpWalking:
+                JumpWalk(verticalForce, horizontalForce);
+                break;
+        }
+    }
+
+    private void Jump(float forceX, float forceY)
+    {
+        if (!alreadyJumped)
+        {
+            body.velocity = new Vector2(forceX, forceY);
+            alreadyJumped = true;
+        }
+    }
+
+    private void Walk(float forceX, float forceY)
+    {
+        body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
+    }
+
+    private void JumpWalk(float forceX, float forceY)
+    {
+        if (!alreadyJumped)
+        {
+            body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
+            alreadyJumped = true;
+        }
+    }
+
+    private void TurnAround()
+    {
+        movingRight = !movingRight;
+        sprite.flipX = !sprite.flipX;
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (verticalForce <= .1f)
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            callUpdate = true;
+            TurnAround();
         }
         else
         {
-            Move(horizontalForce, verticalForce);
-        }
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        UpdatePositions();
-        if (prevPos == currPos)
-        {
-            TurnAround();
+            alreadyJumped = !alreadyJumped;
         }
     }
 
@@ -59,22 +113,5 @@ public class EnemyMovement : MonoBehaviour
             anim.SetTrigger("playerHit");
         }
         StartCoroutine(Extensions.LoadAnimationWithDelay(anim, "Slime_Idle", .7f));
-    }
-
-    private void Move(float forceX, float forceY)
-    {
-        body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
-    }
-
-    private void TurnAround()
-    {
-        movingRight = !movingRight;
-        sprite.flipX = !sprite.flipX;
-    }
-
-    private void UpdatePositions()
-    {
-        prevPos = currPos;
-        currPos = transform.position;
     }
 }
