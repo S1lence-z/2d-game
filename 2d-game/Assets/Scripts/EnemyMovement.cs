@@ -10,12 +10,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float verticalForce;
     [SerializeField] private float horizontalForce;
     private bool movingRight = false;
-    private bool alreadyJumped = false;
+    private bool alreadyJumped = true;
     private movementType movement;
 
     private enum movementType 
     { 
-        walking, jumping, jumpWalking
+        walking, 
+        jumping, 
+        jumpWalking
     };
 
     private void Start()
@@ -51,11 +53,11 @@ public class EnemyMovement : MonoBehaviour
         switch(movement)
         {
             case movementType.walking:
-                Walk(horizontalForce, verticalForce);
+                Walk(horizontalForce);
                 break;
 
             case movementType.jumping:
-                Jump(horizontalForce, verticalForce);
+                Jump(verticalForce);
                 break;
 
             case movementType.jumpWalking:
@@ -64,25 +66,25 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void Jump(float forceX, float forceY)
+    private void Jump(float forceY)
     {
         if (!alreadyJumped)
         {
-            body.velocity = new Vector2(forceX, forceY);
+            body.velocity = new Vector2(0, forceY);
             alreadyJumped = true;
         }
     }
 
-    private void Walk(float forceX, float forceY)
+    private void Walk(float forceX)
     {
-        body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
+        body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), 0);
     }
 
     private void JumpWalk(float forceX, float forceY)
     {
         if (!alreadyJumped)
         {
-            Walk(forceX, forceY);
+            body.velocity = new Vector2(forceX * (movingRight ? 1 : -1), forceY);
             alreadyJumped = true;
         }
     }
@@ -93,12 +95,12 @@ public class EnemyMovement : MonoBehaviour
         sprite.flipX = !sprite.flipX;
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             TurnAround();
+            alreadyJumped = false;
         }
         else
         {
