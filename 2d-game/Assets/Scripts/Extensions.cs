@@ -23,4 +23,10 @@ public static class Extensions
         yield return new WaitForSeconds(delay);
         animator.Play(animationName);
     }
+
+    public static IEnumerator LoadMethodWithDelay(System.Action method, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        method.Invoke();
+    }
 }
