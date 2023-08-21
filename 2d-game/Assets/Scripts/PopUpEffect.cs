@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopUp : MonoBehaviour
+public class PopUpEffect : MonoBehaviour
 {
     [SerializeField] private float moveDelay = .3f;
     private Vector3 position_1;
