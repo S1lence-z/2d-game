@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class SurpriseBox : MonoBehaviour
 {
-    private bool alreadyUsed = false;
     [SerializeField] private GameObject powerUpObject;
+    private bool alreadyUsed = false;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
