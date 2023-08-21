@@ -31,24 +31,20 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.DoubleJump:
-                if (GlobalSettings.chosenGameMode == "levels")
-                {
+                if (GlobalSettings.chosenGameMode == "levels") {
                     PlayerMovement.EnableDoubleJump();
                 }
-                else
-                {
+                else {
                     InfinitePlayerMovement.EnableDoubleJump();
                 }
                 break;
 
             case Type.ScoreItem:
-                if (GlobalSettings.chosenGameMode == "levels")
-                {
+                if (GlobalSettings.chosenGameMode == "levels") {
                     GameScore.AddScore();
                 }
-                else
-                {
-                    GameScoreInfinite.AddScore();
+                else {
+                    InfiniteGameScore.AddScore();
                 }
                 break;
         }

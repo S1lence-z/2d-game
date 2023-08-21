@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameScoreInfinite : MonoBehaviour
+public class InfiniteGameScore : MonoBehaviour
 {
     [SerializeField] private Text displayScore;
     public static int currentScore = 0;

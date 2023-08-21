@@ -17,8 +17,8 @@ public class FinalScore : MonoBehaviour
         }
         else
         {
-            displayCurrentScore.text = "Current Score: " + GameScoreInfinite.currentScore.ToString();
-            displayHighScore.text = "High Score: " + GameScoreInfinite.highScore.ToString();
+            displayCurrentScore.text = "Current Score: " + InfiniteGameScore.currentScore.ToString();
+            displayHighScore.text = "High Score: " + InfiniteGameScore.highScore.ToString();
         }
     }
 }
