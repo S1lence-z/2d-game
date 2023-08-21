@@ -39,7 +39,14 @@ public class InfinitePlayerMovement : MonoBehaviour
         // Horizontal movement - the player moves automatically to the right
         if (Input.GetKeyDown(KeyCode.S))
         {
-            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+            if (playerBody.velocity !=  Vector2.zero)
+            {
+                playerBody.velocity = Vector2.zero;
+            }
+            else
+            {
+                playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+            }
         }
 
         // Jumping Logic
