@@ -15,6 +15,7 @@ public class SurpriseBox : MonoBehaviour
             if (collision.transform.DirectionTest(transform, Vector2.up))
             {
                 Instantiate(powerUpObject, transform.position + new Vector3(0, 2, 0), Quaternion.identity);
+                alreadyUsed = true;
             }
         }
     }
