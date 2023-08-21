@@ -42,7 +42,14 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.ScoreItem:
-                GameScore.AddScore();
+                if (GlobalSettings.chosenGameMode == "levels")
+                {
+                    GameScore.AddScore();
+                }
+                else
+                {
+                    GameScoreInfinite.AddScore();
+                }
                 break;
         }
         Destroy(gameObject);

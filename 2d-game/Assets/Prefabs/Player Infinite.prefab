@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5412690760833530771}
   - component: {fileID: 8015105473595082730}
   - component: {fileID: 1651474843417905399}
-  - component: {fileID: 7326678749571937801}
+  - component: {fileID: 5181931878336794782}
   m_Layer: 0
   m_Name: Player Infinite
   m_TagString: Player
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6487060415781305660
 SpriteRenderer:
@@ -214,7 +214,7 @@ MonoBehaviour:
   moveSpeed: 7
   jumpForce: 15
   secondJumpQuotient: 0.7
---- !u!114 &7326678749571937801
+--- !u!114 &5181931878336794782
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8032379387062743086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10bb2a6390067ae4881debf24b7838a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ee2fa771cc3a9c4795576c17d183751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   displayScore: {fileID: 0}

@@ -10,7 +10,15 @@ public class FinalScore : MonoBehaviour
 
     private void Start()
     {
-        displayCurrentScore.text = "Current Score: " + GameScore.currentScore.ToString();
-        displayHighScore.text = "High Score: " + GameScore.highScore.ToString();
+        if (GlobalSettings.chosenGameMode == "levels")
+        {
+            displayCurrentScore.text = "Current Score: " + GameScore.currentScore.ToString();
+            displayHighScore.text = "High Score: " + GameScore.highScore.ToString();
+        }
+        else
+        {
+            displayCurrentScore.text = "Current Score: " + GameScoreInfinite.currentScore.ToString();
+            displayHighScore.text = "High Score: " + GameScoreInfinite.highScore.ToString();
+        }
     }
 }
