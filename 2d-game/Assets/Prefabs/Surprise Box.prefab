@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4836329112375606748}
   - component: {fileID: 6816064171876330903}
   - component: {fileID: 44643259739934214}
+  - component: {fileID: 1632680873821077603}
   m_Layer: 6
   m_Name: Surprise Box
   m_TagString: Obstacle
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7396437970176908969
 SpriteRenderer:
@@ -218,3 +219,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpObject: {fileID: 458727020935835665, guid: dfcde7f8293f10143b719bddab999b0c, type: 3}
+--- !u!114 &1632680873821077603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196195726476946009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1459ab581cca9d45b66ece8271a5b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDelay: 0.3
