@@ -12,10 +12,16 @@ public static class Extensions
         return Vector2.Dot(direction.normalized, testDirection) > 0.25f;
     }
 
-    public static IEnumerator LoadSceneWithDelay(string sceneName, float delay)
+    public static IEnumerator LoadSceneWithDelayByName(string sceneName, float delay)
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public static IEnumerator LoadSceneWithDelayByIndex(int index, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(index);
     }
 
     public static IEnumerator LoadAnimationWithDelay(Animator animator, string animationName, float delay)

@@ -54,7 +54,7 @@ public class InfinitePlayerLife : MonoBehaviour
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
-            StartCoroutine(Extensions.LoadSceneWithDelay("Game Over", deathDelay));
+            StartCoroutine(Extensions.LoadSceneWithDelayByName("Game Over", deathDelay));
             return;
         }
     }
