@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4944705443130127136}
   - component: {fileID: 6810152856995839668}
   - component: {fileID: 3935904181444667938}
-  - component: {fileID: -5479796271862412411}
   - component: {fileID: 2667823557950675439}
+  - component: {fileID: -5479796271862412411}
   m_Layer: 0
   m_Name: CrystalScore
   m_TagString: Untagged
@@ -132,19 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0674305, y: 0.7985182}
   m_EdgeRadius: 0
---- !u!114 &-5479796271862412411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7449837978205950068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 683e2c7860060c54da511f61e299f09f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 2
 --- !u!95 &2667823557950675439
 Animator:
   serializedVersion: 5
@@ -166,3 +153,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5479796271862412411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7449837978205950068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683e2c7860060c54da511f61e299f09f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
