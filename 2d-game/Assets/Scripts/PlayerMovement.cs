@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
     public static void EnableDoubleJump()
     {
         doubleJumpEnabled = true;
+        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.DoubleJump);
     }
 
     public static void DisableDoubleJump()

@@ -8,12 +8,12 @@ public class StartGame : MonoBehaviour
     public static void StartLevelsMode()
     {
         SceneManager.LoadScene("Level 1");
-        GlobalSettings.SetGameMode(0);
+        GameSettings.SetGameMode(GameSettings.GameMode.Levels);
     }
 
     public static void StartInfiniteMode()
     {
         SceneManager.LoadScene("Infinite Level");
-        GlobalSettings.SetGameMode(1);
+        GameSettings.SetGameMode(GameSettings.GameMode.Infinite);
     }
 }

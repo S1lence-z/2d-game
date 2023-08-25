@@ -18,11 +18,11 @@ public class EndGame : MonoBehaviour
 
     public void PlayAgain()
     {
-        if (GlobalSettings.chosenGameMode == GlobalSettings.gameModes[0])
+        if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels)
         {
             StartGame.StartLevelsMode();
         }
-        else if (GlobalSettings.chosenGameMode == GlobalSettings.gameModes[1])
+        else if (GameSettings.ChosenGameMode == GameSettings.GameMode.Infinite)
         {
             StartGame.StartInfiniteMode();
         }

@@ -10,7 +10,7 @@ public class FinalScore : MonoBehaviour
 
     private void Start()
     {
-        if (GlobalSettings.chosenGameMode == "levels")
+        if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels)
         {
             displayCurrentScore.text = "Current Score: " + GameScore.currentScore.ToString();
             displayHighScore.text = "High Score: " + GameScore.highScore.ToString();

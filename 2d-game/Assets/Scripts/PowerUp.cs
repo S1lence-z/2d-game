@@ -9,7 +9,8 @@ public class PowerUp : MonoBehaviour
     {
         HealingOrb,
         DoubleJump,
-        ScoreItem
+        ScoreItem,
+        Invincibility
     }
 
     public Type type;
@@ -31,19 +32,34 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.DoubleJump:
-                if (GlobalSettings.chosenGameMode == "levels") {
+                if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels) 
+                {
                     PlayerMovement.EnableDoubleJump();
                 }
-                else {
+                else
+                {
                     InfinitePlayerMovement.EnableDoubleJump();
                 }
                 break;
 
+            case Type.Invincibility:
+                if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels)
+                {
+                    PlayerLife.EnableInvinciblePlayer();
+                }
+                else
+                {
+                    InfinitePlayerLife.EnableInvinciblePlayer();
+                }
+                break;
+
             case Type.ScoreItem:
-                if (GlobalSettings.chosenGameMode == "levels") {
+                if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels) 
+                {
                     GameScore.AddScore();
                 }
-                else {
+                else
+                {
                     InfiniteGameScore.AddScore();
                 }
                 break;
