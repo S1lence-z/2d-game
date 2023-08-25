@@ -78,6 +78,7 @@ public class InfinitePlayerMovement : MonoBehaviour
     public static void DisableDoubleJump()
     {
         doubleJumpEnabled = false;
+        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.DoubleJump);
     }
 
     private bool IsGrounded()

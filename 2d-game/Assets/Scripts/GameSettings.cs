@@ -32,11 +32,11 @@ public class GameSettings : MonoBehaviour
         switch (powerUp)
         {
             case PowerUpType.DoubleJump:
-                DoubleJump = true;
+                DoubleJump = !DoubleJump;
                 break;
 
             case PowerUpType.Invincibility:
-                Invincibility = true;
+                Invincibility = !Invincibility;
                 break;
         }
     }
