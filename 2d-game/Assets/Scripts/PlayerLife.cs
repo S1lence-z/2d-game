@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -56,7 +57,7 @@ public class PlayerLife : MonoBehaviour
         anim.SetTrigger("death");
         if (totalHp <= 0)
         {
-            StartCoroutine(Extensions.LoadSceneWithDelay("Game Over", deathDelay));
+            StartCoroutine(Extensions.LoadSceneWithDelayByName("Game Over", deathDelay));
             return;
         }
         else
@@ -85,5 +86,11 @@ public class PlayerLife : MonoBehaviour
         rigidBody.gravityScale = 3f;
         anim.Play("Player_Idle");
         player.transform.position = startPos;
+    }
+
+    public static void EnableInvinciblePlayer()
+    {
+        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
+        // Changed the scale of the player model and change the hitbox size
     }
 }
