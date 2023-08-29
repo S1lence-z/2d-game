@@ -8,12 +8,17 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
+    // Game Objects
     private GameObject player;
     private Animator anim;
+    private PlayerMovement movement;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
+    
+    // Variables
     private float deathDelay = 2f;
     private bool isDead = false;
+    private bool isBig = false;
     private static int totalHp;
     private Vector3 startPos;
     [SerializeField] private Text displayHP;
@@ -24,20 +29,31 @@ public class PlayerLife : MonoBehaviour
         anim = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        movement = GetComponent<PlayerMovement>();
         startPos = player.transform.position;
         totalHp = 3;
+    }
+
+    private void DisablePhysics()
+    {
+        movement.enabled = false;
+        boxCollider.enabled = false;
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.gravityScale = 0f;
+    }
+
+    private void EnablePhysics()
+    {
+        movement.enabled = true;
+        boxCollider.enabled = true;
+        rigidBody.gravityScale = 3f;
     }
 
     private void Update()
     {
         if (isDead)
         {
-            rigidBody.velocity = Vector2.zero;
-            rigidBody.gravityScale = 0f;
-            if (boxCollider != null)
-            {
-                boxCollider.enabled = false;
-            }
+            DisablePhysics();
         }
         displayHP.text = "HP: " + totalHp.ToString();
     }
@@ -46,22 +62,38 @@ public class PlayerLife : MonoBehaviour
     {
         if (!isDead && collision.gameObject.CompareTag("Trap"))
         {
+            Hit();
+        }
+    }
+
+    private void Hit()
+    {
+        if (isBig)
+        {
+            ShrinkPlayer();
+        }
+        else
+        {
             Die();
         }
     }
 
     private void Die()
     {
+        DisablePhysics();
         isDead = true;
         DecreaseHp();
-        anim.SetTrigger("death");
+        if (anim != null)
+        {
+            anim.SetTrigger("death");
+        }
+
         if (totalHp <= 0)
         {
             StartCoroutine(Extensions.LoadSceneWithDelayByName("Game Over", deathDelay));
             return;
         }
-        else
-        {
+        else {
             StartCoroutine(RespawnPlayer());
             return;
         }
@@ -81,16 +113,38 @@ public class PlayerLife : MonoBehaviour
     {
         yield return new WaitForSeconds(deathDelay);
         isDead = false;
-        anim.ResetTrigger("death");
-        boxCollider.enabled = true;
-        rigidBody.gravityScale = 3f;
-        anim.Play("Player_Idle");
+        if (anim != null)
+        {
+            anim.ResetTrigger("death");
+        }
+
+        if (anim != null)
+        {
+            anim.Play("Player_Idle");
+        }
+        EnablePhysics();
         player.transform.position = startPos;
     }
 
     public static void EnableInvinciblePlayer()
     {
         GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
-        // Changed the scale of the player model and change the hitbox size
+        GrowPlayer();
+    }
+
+    public static void DisableInvinciblePlayer()
+    {
+        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
+        ShrinkPlayer();
+    }
+
+    private static void GrowPlayer()
+    {
+
+    }
+
+    private static void ShrinkPlayer()
+    {
+
     }
 }
