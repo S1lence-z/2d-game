@@ -69,4 +69,9 @@ public class InfinitePlayerLife : MonoBehaviour
         GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
         // Changed the scale of the player model and change the hitbox size
     }
+
+    public static void DisableInvinciblePlayer()
+    {
+
+    }
 }
