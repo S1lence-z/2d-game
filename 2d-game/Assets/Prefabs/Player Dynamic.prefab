@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8190686979902184271}
   - component: {fileID: 8426084815660153733}
   - component: {fileID: 3148642301400871591}
+  - component: {fileID: 5952864784132070499}
   m_Layer: 0
   m_Name: SmallPlayer
   m_TagString: Untagged
@@ -105,6 +106,7 @@ MonoBehaviour:
   jump: {fileID: 21300000, guid: 320f4eb52e227b446830a1f6fd691fca, type: 3}
   fall: {fileID: 21300000, guid: 5c8b2ada1a819a54e8c051165c738f18, type: 3}
   doubleJumping: {fileID: 3148642301400871591}
+  death: {fileID: 5952864784132070499}
 --- !u!114 &8190686979902184271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +132,7 @@ MonoBehaviour:
   - {fileID: 4392827059107796345, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   - {fileID: -1363835404106015672, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
   framerate: 0.068
+  playOneTime: 0
 --- !u!114 &8426084815660153733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +159,7 @@ MonoBehaviour:
   - {fileID: -362971539341918764, guid: 552146dbb8bac6f449493bca4b69540f, type: 3}
   - {fileID: 2178398316516280758, guid: 552146dbb8bac6f449493bca4b69540f, type: 3}
   framerate: 0.04
+  playOneTime: 0
 --- !u!114 &3148642301400871591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,6 +180,29 @@ MonoBehaviour:
   - {fileID: -3939753913355333839, guid: 62a315a8619ac644f899c29e008115c0, type: 3}
   - {fileID: 6301718139250434432, guid: 62a315a8619ac644f899c29e008115c0, type: 3}
   framerate: 1
+  playOneTime: 0
+--- !u!114 &5952864784132070499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25621925311365183}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 096bb467866791e478bba81b069ddb41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: -4241635684806205602, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: 5641638529897069760, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: 203894707262023572, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: -2011412612036983366, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: 2053719668135419293, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: -6415160527855421042, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  - {fileID: -8265649554163657122, guid: 99e1beacf34e67c42afd2d344aefcc3c, type: 3}
+  framerate: 0.068
+  playOneTime: 1
 --- !u!1 &3701624572891287285
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +463,7 @@ MonoBehaviour:
   jump: {fileID: 21300000, guid: 1f91cdd0f5e30144bad529ca5ed75233, type: 3}
   fall: {fileID: 21300000, guid: 2b427e4e13239d1468196b34875a9f92, type: 3}
   doubleJumping: {fileID: 3296531857412176488}
+  death: {fileID: 0}
 --- !u!114 &3463847705553006434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +489,7 @@ MonoBehaviour:
   - {fileID: 4392827059107796345, guid: e0bb1defe6bd4f84ab24e34300b1425b, type: 3}
   - {fileID: -1363835404106015672, guid: e0bb1defe6bd4f84ab24e34300b1425b, type: 3}
   framerate: 0.068
+  playOneTime: 0
 --- !u!114 &3081705615688783825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,6 +516,7 @@ MonoBehaviour:
   - {fileID: -362971539341918764, guid: 90a522ff51f546d4a8b227b3ca189da2, type: 3}
   - {fileID: 2178398316516280758, guid: 90a522ff51f546d4a8b227b3ca189da2, type: 3}
   framerate: 0.04
+  playOneTime: 0
 --- !u!114 &3296531857412176488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,3 +537,4 @@ MonoBehaviour:
   - {fileID: -3939753913355333839, guid: 0a755cfdd8b459a4e915b164da11eb14, type: 3}
   - {fileID: 6301718139250434432, guid: 0a755cfdd8b459a4e915b164da11eb14, type: 3}
   framerate: 1
+  playOneTime: 0
