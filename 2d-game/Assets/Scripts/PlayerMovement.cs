@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
             playerDoubleJumped = false;
         }
         // Set the proper integer value of the enum variable state to enable the correct animation
-        if (anim!= null)
+        if (anim != null)
         {
             anim.SetInteger("currentState", (int)state);
         }
