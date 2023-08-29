@@ -30,8 +30,10 @@ public class EndGame : MonoBehaviour
     }
     private void ResetAllSettings()
     {
+        // Reset All Score Counters
         GameScore.ResetScoreCount();
         InfiniteGameScore.ResetScoreCount();
+        // Reset Power Ups
         PlayerMovement.DisableDoubleJump();
         InfinitePlayerMovement.DisableDoubleJump();
     }
