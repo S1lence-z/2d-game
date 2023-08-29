@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         idle, 
         running, 
         jumping, 
-        falling , 
+        falling, 
         doubleJumping 
     };
 
