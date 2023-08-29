@@ -15,6 +15,7 @@ public class FinishLevel : MonoBehaviour
         {
             print("You Completed This Level!");
             levelCompleted = true;
+            CompleteLevel();
         }
     }
 
