@@ -18,11 +18,19 @@ public class PlayerMovement : MonoBehaviour
     private bool playerDoubleJumped = false;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 15f;
+    [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float secondJumpQuotient = .7f;
 
     // Possible player states
-    private enum PlayerMovementState { idle, running, jumping, falling , doubleJumping };
+    public enum PlayerMovementState { 
+        idle, 
+        running, 
+        jumping, 
+        falling , 
+        doubleJumping 
+    };
+
+    public PlayerMovementState state = PlayerMovementState.idle;
 
     private void Start()
     {
@@ -83,17 +91,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdatePlayerAnimationState()
     {
-        PlayerMovementState state;
         // Check if the player is moving to the left or to the right or not at all
         if (dirX > 0f)
         {
             state = PlayerMovementState.running;
-            sprite.flipX = false;
+            transform.eulerAngles = Vector3.zero;
         }
         else if (dirX < 0f)
         {
             state = PlayerMovementState.running;
-            sprite.flipX = true;
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         else
         {
@@ -114,6 +121,9 @@ public class PlayerMovement : MonoBehaviour
             playerDoubleJumped = false;
         }
         // Set the proper integer value of the enum variable state to enable the correct animation
-        anim.SetInteger("currentState", (int)state);
+        if (anim!= null)
+        {
+            anim.SetInteger("currentState", (int)state);
+        }
     }
 }
