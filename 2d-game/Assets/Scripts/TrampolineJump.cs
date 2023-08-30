@@ -8,6 +8,7 @@ public class TrampolineJump : MonoBehaviour
     private Rigidbody2D playerBody;
     private Animator anim;
     [SerializeField] private float launchForce;
+    [SerializeField] private AudioSource trampolineSFX;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class TrampolineJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             anim.SetBool("trampOn", true);
+            trampolineSFX.Play();
             playerBody.velocity = Vector2.up * launchForce;
         }
     }
