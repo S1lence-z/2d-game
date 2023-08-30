@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class InfinitePlayerMovement : MonoBehaviour, IMovement
 {
@@ -11,7 +12,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     // Objects
     private Rigidbody2D playerBody;
     private Animator anim;
-
+    private Camera cam;
     private BoxCollider2D boxCollider;
 
     // Variables
@@ -31,10 +32,12 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         playerBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
+        cam = Camera.main;
     }
 
     private void Update()
     {
+        CheckPlayerOutOfBounds();
         UpdatePlayerMovement();
         UpdatePlayerAnimationState();
     }
@@ -69,6 +72,18 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
             doubleJumpReady = false;
             playerDoubleJumped = true;
             Jump(jumpForce, secondJumpQuotient);
+        }
+    }
+
+    private void CheckPlayerOutOfBounds()
+    {
+        // Make sure the player does not go out of bounds to the left
+        Vector3 leftEdge = cam.ScreenToWorldPoint(Vector2.zero);
+        Vector3 rightEdge = cam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
+        if (playerBody.position.x <= leftEdge.x + 1)
+        {
+            isMovingLeft = false;
+            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
         }
     }
 
