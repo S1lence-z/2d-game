@@ -5,15 +5,24 @@ using UnityEngine.UI;
 
 public class PowerUp : MonoBehaviour
 {
+    private GameObject player;
+    private PlayerLife life;
+
     public enum Type
     {
         HealingOrb,
         DoubleJump,
         ScoreItem,
-        Invincibility
+        BigPlayer
     }
 
     public Type type;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        life = player.GetComponent<PlayerLife>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,14 +51,14 @@ public class PowerUp : MonoBehaviour
                 }
                 break;
 
-            case Type.Invincibility:
+            case Type.BigPlayer:
                 if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels)
                 {
-                    PlayerLife.EnableInvinciblePlayer();
+                    life.EnableBigPlayer();
                 }
                 else
                 {
-                    InfinitePlayerLife.EnableInvinciblePlayer();
+                    InfinitePlayerLife.EnableBigPlayer();
                 }
                 break;
 

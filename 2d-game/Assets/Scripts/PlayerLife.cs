@@ -14,6 +14,9 @@ public class PlayerLife : MonoBehaviour
     private PlayerMovement movement;
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
+    public PlayerSpriteRenderer smallRenderer;
+    public PlayerSpriteRenderer bigRenderer;
+    private PlayerSpriteRenderer activeRenderer;
     
     // Variables
     private float deathDelay = 2f;
@@ -126,25 +129,33 @@ public class PlayerLife : MonoBehaviour
         player.transform.position = startPos;
     }
 
-    public static void EnableInvinciblePlayer()
+    public void EnableBigPlayer()
     {
-        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
         GrowPlayer();
     }
 
-    public static void DisableInvinciblePlayer()
+    public void DisableBigPlayer()
     {
-        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.Invincibility);
         ShrinkPlayer();
     }
 
-    private static void GrowPlayer()
+    private void GrowPlayer()
     {
-
+        isBig = true;
+        smallRenderer.enabled = false;
+        bigRenderer.enabled = true;
+        activeRenderer = bigRenderer;
+        boxCollider.size = new Vector2(1.25f, 2f);
+        boxCollider.offset = new Vector2(boxCollider.offset.x, -.4f);
     }
 
-    private static void ShrinkPlayer()
+    private void ShrinkPlayer()
     {
-
+        isBig = false;
+        smallRenderer.enabled = true;
+        bigRenderer.enabled = false;
+        activeRenderer = smallRenderer;
+        boxCollider.size = new Vector2(0.8529136f, 1.27851f);
+        boxCollider.offset = new Vector2(boxCollider.offset.x, -0.7326109f);
     }
 }

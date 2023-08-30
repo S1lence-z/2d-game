@@ -5,20 +5,19 @@ using UnityEngine;
 
 public class PlayerSpriteRenderer : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
     private PlayerMovement movement;
-    [SerializeField] private AnimatedSprite idle;
-    [SerializeField] private AnimatedSprite running;
-    [SerializeField] private Sprite jump;
-    [SerializeField] private Sprite fall;
-    [SerializeField] private AnimatedSprite doubleJumping;
-    [SerializeField] private AnimatedSprite death;
+    public SpriteRenderer spriteRenderer { get; private set; }
+    public AnimatedSprite idle;
+    public AnimatedSprite running;
+    public Sprite jump;
+    public Sprite fall;
+    public AnimatedSprite doubleJumping;
+    public AnimatedSprite death;
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.enabled = true;
         movement = GetComponentInParent<PlayerMovement>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void DisableAllMovement()
@@ -65,5 +64,15 @@ public class PlayerSpriteRenderer : MonoBehaviour
                 spriteRenderer.sprite = fall;
             }
         }
+    }
+
+    private void OnEnable()
+    {
+        spriteRenderer.enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        spriteRenderer.enabled = false;
     }
 }
