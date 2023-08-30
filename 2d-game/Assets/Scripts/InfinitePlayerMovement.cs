@@ -47,18 +47,15 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         // Horizontal movement
         if (Input.GetKeyDown(KeyCode.S))
         {
-            isMovingLeft = false;
-            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+            MoveToTheRight();
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            isMovingLeft = true;
-            playerBody.velocity = new Vector2(-moveSpeed, playerBody.velocity.y);
+            MoveToTheLeft();
         }
         if (Input.GetKeyUp(KeyCode.A) && isMovingLeft)
         {
-            isMovingLeft = false;
-            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+            MoveToTheRight();
         }
         // Jumping Logic
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -74,7 +71,6 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
             Jump(jumpForce, secondJumpQuotient);
         }
     }
-
     private void CheckPlayerOutOfBounds()
     {
         // Make sure the player does not go out of bounds to the left
@@ -82,9 +78,20 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         Vector3 rightEdge = cam.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
         if (playerBody.position.x <= leftEdge.x + 1)
         {
-            isMovingLeft = false;
-            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+            MoveToTheRight();
         }
+    }
+
+    private void MoveToTheLeft()
+    {
+        isMovingLeft = true;
+        playerBody.velocity = new Vector2(-moveSpeed, playerBody.velocity.y);
+    }
+
+    private void MoveToTheRight()
+    {
+        isMovingLeft = false;
+        playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
     }
 
     private void Jump(float jumpingForce, float jumpingQuotient)
