@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopUpEffect : MonoBehaviour
 {
-    [SerializeField] private float moveDelay = .3f;
+    [SerializeField] private float moveDelay = .09f;
     private Vector3 position_1;
     private Vector3 position_2;
 
