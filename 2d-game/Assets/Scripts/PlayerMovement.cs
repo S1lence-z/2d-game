@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMovement
 {
+    // IMovement interface inheritance
+    public bool IsEnabled => enabled;
+    public IMovement.PlayerMovementState State => state;
+
     // Objects
     private Rigidbody2D playerBody;
     private Animator anim;
@@ -21,16 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float secondJumpQuotient = .7f;
 
-    // Possible player states
-    public enum PlayerMovementState { 
-        idle, 
-        running, 
-        jumping, 
-        falling, 
-        doubleJumping 
-    };
-
-    public PlayerMovementState state = PlayerMovementState.idle;
+    public IMovement.PlayerMovementState state = IMovement.PlayerMovementState.idle;
 
     private void Start()
     {
@@ -94,30 +89,30 @@ public class PlayerMovement : MonoBehaviour
         // Check if the player is moving to the left or to the right or not at all
         if (dirX > 0f)
         {
-            state = PlayerMovementState.running;
+            state = IMovement.PlayerMovementState.running;
             transform.eulerAngles = Vector3.zero;
         }
         else if (dirX < 0f)
         {
-            state = PlayerMovementState.running;
+            state = IMovement.PlayerMovementState.running;
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         else
         {
-            state = PlayerMovementState.idle;
+            state = IMovement.PlayerMovementState.idle;
         }
         // Check for jumping and falling
         if (playerBody.velocity.y < -.1)
         {
-            state = PlayerMovementState.falling;
+            state = IMovement.PlayerMovementState.falling;
         }
         else if (playerBody.velocity.y > .1f)
         {
-            state = PlayerMovementState.jumping;
+            state = IMovement.PlayerMovementState.jumping;
         }
         if (doubleJumpEnabled && !doubleJumpReady && playerDoubleJumped && !IsGrounded() )
         {
-            state = PlayerMovementState.doubleJumping;
+            state = IMovement.PlayerMovementState.doubleJumping;
             playerDoubleJumped = false;
         }
         // Set the proper integer value of the enum variable state to enable the correct animation
