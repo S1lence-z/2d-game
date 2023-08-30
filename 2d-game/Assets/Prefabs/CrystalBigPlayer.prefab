@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 161121292705386706}
   - component: {fileID: 342782066550997228}
   m_Layer: 0
-  m_Name: CrystalInvincible
+  m_Name: CrystalBigPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
