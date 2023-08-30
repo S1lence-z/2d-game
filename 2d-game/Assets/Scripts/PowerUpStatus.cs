@@ -6,7 +6,24 @@ using UnityEngine.UI;
 public class PowerUpStatus : MonoBehaviour
 {
     [SerializeField] private Image doubleJumpImage;
-    public bool doubleJumpStatus { get; private set; } = false;
+    public static bool doubleJumpStatus { get; private set; } = false;
+
+    private void Update()
+    {
+        CheckDoubleJumpState();
+    }
+
+    private void CheckDoubleJumpState()
+    {
+        if (doubleJumpStatus)
+        {
+            DoubleJumpOn();
+        }
+        else
+        {
+            DoubleJumpOff();
+        }
+    }
 
     public void UpdateDoubleJumpState()
     {
