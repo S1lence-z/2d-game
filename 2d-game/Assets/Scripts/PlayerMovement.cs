@@ -69,14 +69,12 @@ public class PlayerMovement : MonoBehaviour, IMovement
 
     public static void EnableDoubleJump()
     {
-        doubleJumpEnabled = true;
-        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.DoubleJump);
+        doubleJumpEnabled = !doubleJumpEnabled;
     }
 
     public static void DisableDoubleJump()
     {
         doubleJumpEnabled = false;
-        GameSettings.SetPowerUpStatus(GameSettings.PowerUpType.DoubleJump);
     }    
 
     private bool IsGrounded()
