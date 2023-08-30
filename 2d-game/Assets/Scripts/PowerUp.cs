@@ -50,6 +50,7 @@ public class PowerUp : MonoBehaviour
                 }
                 else
                 {
+                    powerStatus.UpdateDoubleJumpState();
                     InfinitePlayerMovement.EnableDoubleJump();
                 }
                 break;
