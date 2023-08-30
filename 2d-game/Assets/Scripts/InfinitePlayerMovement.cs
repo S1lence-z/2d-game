@@ -57,7 +57,6 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
             isMovingLeft = false;
             playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
         }
-
         // Jumping Logic
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -98,7 +97,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     private void UpdatePlayerAnimationState()
     {
         // Check for running, jumping and falling
-        if (playerBody.velocity.y < -.1)
+        if (playerBody.velocity.y < -.1f)
         {
             state = IMovement.PlayerMovementState.falling;
         }
@@ -106,9 +105,15 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         {
             state = IMovement.PlayerMovementState.jumping;
         }
-        else if (playerBody.velocity.x > .1f)
+        else if (playerBody.velocity.x > 0f)
         {
             state = IMovement.PlayerMovementState.running;
+            transform.eulerAngles = Vector3.zero;
+        }
+        else if (playerBody.velocity.x < 0f)
+        {
+            state = IMovement.PlayerMovementState.running;
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         else
         {
