@@ -16,6 +16,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     private BoxCollider2D boxCollider;
 
     // Variables
+    [SerializeField] private AudioSource jumpSFX;
     private static bool doubleJumpEnabled = false;
     private bool doubleJumpReady = false;
     private bool playerDoubleJumped = false;
@@ -65,6 +66,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             doubleJumpReady = true;
+            jumpSFX.Play();
             Jump(jumpForce, 1f);
         }
         // Double Jump Logic
@@ -72,9 +74,11 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         {
             doubleJumpReady = false;
             playerDoubleJumped = true;
+            jumpSFX.Play();
             Jump(jumpForce, secondJumpQuotient);
         }
     }
+
     private void CheckPlayerOutOfBounds()
     {
         // Make sure the player does not go out of bounds to the left

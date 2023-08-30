@@ -14,6 +14,7 @@ public class InfinitePlayerLife : MonoBehaviour
     private static int totalHp;
     private Vector3 startPos;
     [SerializeField] private Text displayHP;
+    [SerializeField] private AudioSource deathSFX;
 
     private void Start()
     {
@@ -49,6 +50,7 @@ public class InfinitePlayerLife : MonoBehaviour
 
     private void Die()
     {
+        deathSFX.Play();
         isDead = true;
         DecreaseHp();
         anim.SetTrigger("death");

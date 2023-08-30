@@ -25,6 +25,7 @@ public class PlayerLife : MonoBehaviour
     private static int totalHp;
     private Vector3 startPos;
     [SerializeField] private Text displayHP;
+    [SerializeField] private AudioSource deathSFX;
 
     private void Start()
     {
@@ -83,6 +84,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
+        deathSFX.Play();
         DisablePhysics();
         isDead = true;
         DecreaseHp();
