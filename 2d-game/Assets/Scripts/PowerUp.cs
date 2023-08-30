@@ -56,10 +56,6 @@ public class PowerUp : MonoBehaviour
                 {
                     life.EnableBigPlayer();
                 }
-                else
-                {
-                    InfinitePlayerLife.EnableBigPlayer();
-                }
                 break;
 
             case Type.ScoreItem:
