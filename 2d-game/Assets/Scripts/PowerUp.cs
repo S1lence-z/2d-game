@@ -7,6 +7,7 @@ public class PowerUp : MonoBehaviour
 {
     private GameObject player;
     private PlayerLife life;
+    private PowerUpStatus powerStatus;
 
     public enum Type
     {
@@ -22,6 +23,7 @@ public class PowerUp : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         life = player.GetComponent<PlayerLife>();
+        powerStatus = player.GetComponent<PowerUpStatus>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -43,6 +45,7 @@ public class PowerUp : MonoBehaviour
             case Type.DoubleJump:
                 if (GameSettings.ChosenGameMode == GameSettings.GameMode.Levels) 
                 {
+                    powerStatus.UpdateDoubleJumpState();
                     PlayerMovement.EnableDoubleJump();
                 }
                 else
