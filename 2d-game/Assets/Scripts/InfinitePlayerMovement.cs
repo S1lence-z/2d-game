@@ -18,6 +18,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     private static bool doubleJumpEnabled = false;
     private bool doubleJumpReady = false;
     private bool playerDoubleJumped = false;
+    private bool isMovingLeft = false;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 14f;
@@ -40,17 +41,21 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
 
     private void UpdatePlayerMovement()
     {
-        // Horizontal movement - the player moves automatically to the right
+        // Horizontal movement
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (playerBody.velocity !=  Vector2.zero)
-            {
-                playerBody.velocity = Vector2.zero;
-            }
-            else
-            {
-                playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
-            }
+            isMovingLeft = false;
+            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            isMovingLeft = true;
+            playerBody.velocity = new Vector2(-moveSpeed, playerBody.velocity.y);
+        }
+        if (Input.GetKeyUp(KeyCode.A) && isMovingLeft)
+        {
+            isMovingLeft = false;
+            playerBody.velocity = new Vector2(moveSpeed, playerBody.velocity.y);
         }
 
         // Jumping Logic
