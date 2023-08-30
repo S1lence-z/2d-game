@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
 
     private void UpdatePlayerMovement()
     {
-        // Horizontal movement (the multiplication ensures joystick support as the value can vary)
+        // Horizontal movement
         dirX = Input.GetAxisRaw("Horizontal");
         playerBody.velocity = new Vector2(dirX * moveSpeed, playerBody.velocity.y);
 
