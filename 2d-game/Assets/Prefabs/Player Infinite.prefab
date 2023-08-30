@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1895203831177005168}
   - component: {fileID: 7444304408049876174}
   - component: {fileID: 5412690760833530771}
-  - component: {fileID: 8015105473595082730}
+  - component: {fileID: 7688959014603373656}
   - component: {fileID: 1651474843417905399}
   - component: {fileID: 5181931878336794782}
   m_Layer: 0
@@ -183,7 +183,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8015105473595082730
+--- !u!114 &7688959014603373656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,6 +214,7 @@ MonoBehaviour:
   moveSpeed: 7
   jumpForce: 15
   secondJumpQuotient: 0.7
+  state: 0
 --- !u!114 &5181931878336794782
 MonoBehaviour:
   m_ObjectHideFlags: 0
