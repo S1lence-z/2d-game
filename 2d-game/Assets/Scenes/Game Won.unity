@@ -926,7 +926,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 11, y: 76}
-  m_SizeDelta: {x: 500, y: 30}
+  m_SizeDelta: {x: 600, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &909735960
 MonoBehaviour:
@@ -961,7 +961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You beat all the levels, congrats!
+  m_Text: You made your first contact with an alien!
 --- !u!222 &909735961
 CanvasRenderer:
   m_ObjectHideFlags: 0
