@@ -8,12 +8,13 @@ public class FinishLevel : MonoBehaviour
     private bool levelCompleted = false;
     private int lastLevelIndex = 4;
     private float winDelay = 2f;
+    [SerializeField] private AudioSource FinishSFX;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!levelCompleted && collision.gameObject.name == "Player")
         {
-            print("You Completed This Level!");
+            FinishSFX.Play();
             levelCompleted = true;
             CompleteLevel();
         }
