@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
     private Animator anim;
     private SpriteRenderer sprite;
     private BoxCollider2D boxCollider;
+    [SerializeField] private AudioSource jumpSFX;
 
     // Variables
     private float dirX = 0f;
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             doubleJumpReady = true;
+            jumpSFX.Play();
             Jump(jumpForce, 1f);
         }
         // Double Jump Logic
@@ -58,6 +60,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
         {
             doubleJumpReady = false;
             playerDoubleJumped = true;
+            jumpSFX.Play();
             Jump(jumpForce, secondJumpQuotient);
         }
     }
