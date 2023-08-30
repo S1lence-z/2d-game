@@ -24,6 +24,9 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float secondJumpQuotient = .7f;
+    private float addedSpeed = 1f;
+    private float lastSpeedIncreaseTime;
+    private float speedIncreaseInterval = 15f;
 
     public IMovement.PlayerMovementState state = IMovement.PlayerMovementState.idle;
 
@@ -40,6 +43,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         CheckPlayerOutOfBounds();
         UpdatePlayerMovement();
         UpdatePlayerAnimationState();
+        UpdatePlayerSpeed();
     }
 
     private void UpdatePlayerMovement()
@@ -79,6 +83,15 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
         if (playerBody.position.x <= leftEdge.x + 1)
         {
             MoveToTheRight();
+        }
+    }
+
+    private void UpdatePlayerSpeed()
+    {
+        if (Time.time - lastSpeedIncreaseTime >= speedIncreaseInterval)
+        {
+            lastSpeedIncreaseTime = Time.time;
+            moveSpeed += addedSpeed;
         }
     }
 
