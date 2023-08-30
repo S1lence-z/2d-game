@@ -50,7 +50,6 @@ public class PlayerSpriteRenderer : MonoBehaviour
         {
             DisableAllMovement();
             death.enabled = true;
-            print("ahoj");
         }
         else
         {
