@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 322566303554512284}
   - component: {fileID: 6325979151832936211}
   - component: {fileID: 2387679978751816231}
+  - component: {fileID: 4107837423068280645}
   - component: {fileID: 8604166303573440808}
   - component: {fileID: 150636230068779848}
   m_Layer: 0
@@ -333,6 +334,25 @@ MonoBehaviour:
   jumpForce: 14
   secondJumpQuotient: 0.7
   state: 1
+--- !u!114 &4107837423068280645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3701624572891287285}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17fb12863b73cb4aa67c915d755ed3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 0
+  moveSpeed: 5
+  jumpForce: 14
+  secondJumpQuotient: 0.7
+  state: 0
 --- !u!114 &8604166303573440808
 MonoBehaviour:
   m_ObjectHideFlags: 0
