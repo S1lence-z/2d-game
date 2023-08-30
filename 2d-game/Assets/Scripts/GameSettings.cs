@@ -17,10 +17,8 @@ public class GameSettings : MonoBehaviour
     public enum PowerUpType
     {
         DoubleJump,
-        Invincibility
     }
     public static bool DoubleJump { get; private set; } = false;
-    public static bool Invincibility { get; private set; } = false;
 
     public static void SetGameMode(GameMode mode)
     {
@@ -33,10 +31,6 @@ public class GameSettings : MonoBehaviour
         {
             case PowerUpType.DoubleJump:
                 DoubleJump = !DoubleJump;
-                break;
-
-            case PowerUpType.Invincibility:
-                Invincibility = !Invincibility;
                 break;
         }
     }
