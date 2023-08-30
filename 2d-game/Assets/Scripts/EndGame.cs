@@ -36,5 +36,6 @@ public class EndGame : MonoBehaviour
         // Reset Power Ups
         PlayerMovement.DisableDoubleJump();
         InfinitePlayerMovement.DisableDoubleJump();
+        PowerUpStatus.ResetDoubleJumpState();
     }
 }

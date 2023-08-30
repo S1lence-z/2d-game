@@ -13,6 +13,11 @@ public class PowerUpStatus : MonoBehaviour
         CheckDoubleJumpState();
     }
 
+    public static void ResetDoubleJumpState()
+    {
+        doubleJumpStatus = false;
+    }
+
     private void CheckDoubleJumpState()
     {
         if (doubleJumpStatus)
