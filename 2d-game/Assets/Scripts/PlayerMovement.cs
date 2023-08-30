@@ -108,7 +108,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
         {
             state = IMovement.PlayerMovementState.jumping;
         }
-        if (doubleJumpEnabled && !doubleJumpReady && playerDoubleJumped && !IsGrounded() )
+        if (doubleJumpEnabled && !doubleJumpReady && playerDoubleJumped && !IsGrounded())
         {
             state = IMovement.PlayerMovementState.doubleJumping;
             playerDoubleJumped = false;
