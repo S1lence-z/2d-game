@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour, IMovement
             state = IMovement.PlayerMovementState.idle;
         }
         // Check for jumping and falling
-        if (playerBody.velocity.y < -.1)
+        if (playerBody.velocity.y < -.1f)
         {
             state = IMovement.PlayerMovementState.falling;
         }
