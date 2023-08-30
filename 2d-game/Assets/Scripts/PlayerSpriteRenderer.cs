@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class PlayerSpriteRenderer : MonoBehaviour
 {
     private PlayerMovement movement;
-    public SpriteRenderer spriteRenderer { get; private set; }
+    private InfinitePlayerMovement infiniteMovement;
+    private IMovement activeMovementScript;
+    public SpriteRenderer spriteRenderer;
     public AnimatedSprite idle;
     public AnimatedSprite running;
     public Sprite jump;
@@ -17,7 +20,21 @@ public class PlayerSpriteRenderer : MonoBehaviour
     private void Awake()
     {
         movement = GetComponentInParent<PlayerMovement>();
+        infiniteMovement = GetComponentInParent<InfinitePlayerMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        SetActiveMovementScript();
+    }
+
+    private void SetActiveMovementScript()
+    {
+        if (infiniteMovement != null && infiniteMovement.enabled)
+        {
+            activeMovementScript = infiniteMovement;
+        }
+        else if (movement != null && movement.enabled)
+        {
+            activeMovementScript = movement;
+        }
     }
 
     private void DisableAllMovement()
@@ -29,37 +46,38 @@ public class PlayerSpriteRenderer : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!movement.enabled)
+        if (!activeMovementScript.IsEnabled)
         {
             DisableAllMovement();
             death.enabled = true;
+            print("ahoj");
         }
         else
         {
             death.enabled = false;
-            if (movement.state == PlayerMovement.PlayerMovementState.doubleJumping)
+            if (activeMovementScript.State == IMovement.PlayerMovementState.doubleJumping)
             {
                 doubleJumping.enabled = true;
             }
             else { doubleJumping.enabled = false; }
 
-            if (movement.state == PlayerMovement.PlayerMovementState.running)
+            if (activeMovementScript.State == IMovement.PlayerMovementState.running)
             {
                 running.enabled = true;
             }
             else { running.enabled = false; }
 
-            if (movement.state == PlayerMovement.PlayerMovementState.idle && !running.enabled)
+            if (activeMovementScript.State == IMovement.PlayerMovementState.idle && !running.enabled)
             {
                 idle.enabled = true;
             }
             else { idle.enabled = false; }
 
-            if (movement.state == PlayerMovement.PlayerMovementState.jumping)
+            if (activeMovementScript.State == IMovement.PlayerMovementState.jumping)
             {
                 spriteRenderer.sprite = jump;
             }
-            else if (movement.state == PlayerMovement.PlayerMovementState.falling)
+            else if (activeMovementScript.State == IMovement.PlayerMovementState.falling)
             {
                 spriteRenderer.sprite = fall;
             }
