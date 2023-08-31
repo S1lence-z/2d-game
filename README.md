@@ -59,4 +59,3 @@ Before installing and running the game, ensure that you have the following softw
 **User documentation:** [User Docs](./docs/user_docs.md)
 
 **Programming documentation:** [Program Docs](./docs/program_docs.md)
-
