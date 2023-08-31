@@ -33,7 +33,7 @@ The game has **30 scripts** which can be divided into **5 groups**:
 3. **EndGame**:
 4. **PowerUpStatus**:
 
-# Items Scripts
+# Item Scripts
 
 ## Camera
 
