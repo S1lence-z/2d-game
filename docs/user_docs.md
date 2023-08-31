@@ -21,7 +21,8 @@ This part of the game documentation provides everything the player needs to know
 1. **Box** - a static obstacle
 2. **Surprise Box** - a static obstacle which generates a random collectable item when the player hits the box from below
 3. **Portals** - a set of two two-way portals
-4. **Static Platforms** - jumpable platforms 
+4. **Static Platforms** - jumpable platforms
+5. **Finish Line** - an object marks the end of a level, it changes the level upon impact with the player
 
 ---
 
