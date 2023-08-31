@@ -245,7 +245,7 @@ Transform:
   - {fileID: 6010485937948166173}
   - {fileID: 6047594548499229699}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &322566303554512284
 Rigidbody2D:
@@ -351,9 +351,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17fb12863b73cb4aa67c915d755ed3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSFX: {fileID: 0}
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   moveSpeed: 5
   jumpForce: 14
   secondJumpQuotient: 0.7
