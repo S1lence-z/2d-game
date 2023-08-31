@@ -18,7 +18,7 @@ Before installing and running the game, ensure that you have the following softw
 
 # Installation
 
-To download the repository, follow these steps:
+### To download the repository, follow these steps:
 
 1. Clone this repository to your local machine or download it as a ZIP file.
    ```bash
@@ -26,11 +26,17 @@ To download the repository, follow these steps:
    ```
 2. Open Unity and select "Open Project." Navigate to the directory where you cloned or extracted the game, and Unity will load the project for you.
 
-To play the game, follow these steps:
+### To play the game, follow these steps:
 
-1. Click the link below which will download the latest build of the game. You can then just open the .exe file and the game will run.
+1. Click the link below and download the latest build of the game as a ZIP file. 
 
-[Download](https://1drv.ms/f/s!ArIO-MD88Fjfg5QvgrExnq17CJeFhQ?e=dwVDdl)
+2. Unzip the downloaded file and click on the .exe file called Space Runner: First Conctact.
+
+3. Enjoy the game!
+
+**The latest build**: [Download](https://1drv.ms/f/s!ArIO-MD88Fjfg5QvgrExnq17CJeFhQ?e=dwVDdl)
+
+---
 
 # Controls
 
