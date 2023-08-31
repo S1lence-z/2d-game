@@ -28,11 +28,17 @@ To play Space Runner, follow these steps:
 
 # Controls
 
-The controls for Space Runner are straightforward:
+## Levels Mode Controls:
+- **Move Left:** [A] key or Left arrow key (hold down)
+- **Move Right:** [D] key or Right arrow key (hold down)
+- **Jump:** [Space]  (press)
+- **Double Jump** [Space] key (double press)
 
-- **Move Left:** [A] key or Left arrow key
-- **Move Right:** [D] key or Right arrow key
-- **Jump:** [Space] key
+## Infinite Mode Controls:
+- **Start Running** [S] key (press)
+- **Move Left** [A] key (hold down)
+- **Jump:** [Space] key (press)
+- **Double Jump** [Space] key (double press)
 
 ---
 
