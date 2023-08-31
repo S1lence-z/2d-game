@@ -12,7 +12,7 @@ public class FinishLevel : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!levelCompleted && collision.gameObject.name == "Player")
+        if (!levelCompleted && collision.CompareTag("Player"))
         {
             FinishSFX.Play();
             levelCompleted = true;
