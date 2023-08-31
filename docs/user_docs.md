@@ -30,6 +30,8 @@ This part of the game documentation provides everything the player needs to know
 - **Levels Mode**: 3 predesigned levels
 - **Infinite Mode**: the player goes automatically to the right, platforms spawn in front of him in random order
 
+---
+
 # Controls
 
 ## Levels Mode Controls:
