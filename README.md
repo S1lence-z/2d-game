@@ -30,7 +30,7 @@ To play the game, follow these steps:
 
 1. Click the link below which will download the latest build of the game. You can then just open the .exe file and the game will run.
 
-[Download] (https://1drv.ms/f/s!ArIO-MD88Fjfg5QvgrExnq17CJeFhQ?e=dwVDdl)
+[Download](https://1drv.ms/f/s!ArIO-MD88Fjfg5QvgrExnq17CJeFhQ?e=dwVDdl)
 
 # Controls
 
