@@ -1,6 +1,6 @@
 # Code Documentation
 
-This part of the game documentation provides information about the scripts and classes the game uses to operate. 
+This part of the game documentation provides information about the scripts and classes the game uses to operate.
 
 The game has **30 scripts** which can be divided into **5 groups**:
 
@@ -72,3 +72,12 @@ The game has **30 scripts** which can be divided into **5 groups**:
 5. **AnimatedSprite**: a class which takes several sprites and animates them at the desired speed
 6. **LevelGenerator**: a class which takes a list of platform prefabs and generates when the player gets near the next platform
 7. **Extensions**: a class which provides fuctions which can be used by any other class, they usually provide delay before doing something (loading a scene or calling a method)
+
+---
+
+# Assets
+
+There are **2 types** of assets in this game:
+
+1. **Custom Assets** - These are custom made assets which I made myself, they can be found in the **Custom Assets folder**.
+2. **Imported Assets** - These are assets that were made by somebody else, I downloaded them from the Unity Asset Store where they are published. These assets can be found in the **Imported Assets folder**.
