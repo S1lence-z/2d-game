@@ -40,7 +40,7 @@ Transform:
   - {fileID: 2389481682413791311}
   - {fileID: 271258641933351161}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4593750889107449625
 GameObject:
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 271258641933351161}
   m_Layer: 0
-  m_Name: EndPosition
+  m_Name: EndPos
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

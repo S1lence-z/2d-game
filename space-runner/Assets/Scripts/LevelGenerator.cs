@@ -5,14 +5,14 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     private const float playerDistanceSpawnLevelPart = 40f;
+    private Vector3 lastEndPosition;
     [SerializeField] private Transform levelPartStart;
     [SerializeField] private List<Transform> levelPartList;
     [SerializeField] private GameObject player;
-    private Vector3 lastEndPosition;
 
     private void Awake()
     {
-        lastEndPosition = levelPartStart.Find("EndPosition").position;
+        lastEndPosition = levelPartStart.Find("EndPos").position;
     }
 
     private void Update()
@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
     {
         Transform pickedLevelPart = levelPartList[Random.Range(0, levelPartList.Count)];
         Transform lastLevelPart = GetLevelPart(pickedLevelPart, lastEndPosition);
-        lastEndPosition = lastLevelPart.Find("EndPosition").position;
+        lastEndPosition = lastLevelPart.Find("EndPos").position;
     }
 
     private Transform GetLevelPart(Transform levelPart, Vector3 spawnPosition)

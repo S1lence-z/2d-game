@@ -32,12 +32,12 @@ Transform:
   - {fileID: 5955844442662556705}
   - {fileID: 5309055768548676993}
   - {fileID: 889166121914382778}
-  - {fileID: 1099003210187579278}
   - {fileID: 5334445830420361684}
   - {fileID: 2528240023681791254}
   - {fileID: 2443926434137622309}
+  - {fileID: 1099003210187579278}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3718194150786515494
 GameObject:
@@ -49,7 +49,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1099003210187579278}
   m_Layer: 0
-  m_Name: EndPosition
+  m_Name: EndPos
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

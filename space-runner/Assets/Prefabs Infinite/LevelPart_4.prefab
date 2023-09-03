@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2659987920897993203}
   m_Layer: 0
-  m_Name: EndPosition
+  m_Name: EndPos
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -65,10 +65,10 @@ Transform:
   - {fileID: 7735937033278898312}
   - {fileID: 5109472549513024493}
   - {fileID: 463216368594818240}
-  - {fileID: 2659987920897993203}
   - {fileID: 4348404950255047355}
+  - {fileID: 2659987920897993203}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &269416610227095649
 PrefabInstance:

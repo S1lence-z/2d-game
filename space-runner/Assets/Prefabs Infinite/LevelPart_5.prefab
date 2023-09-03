@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1351808698428745660}
   - {fileID: 9035204753119934197}
   - {fileID: 1584147138245626677}
   - {fileID: 4636283998433618100}
@@ -36,14 +37,13 @@ Transform:
   - {fileID: 1348913666145608609}
   - {fileID: 6597051752500288326}
   - {fileID: 3272168884862637427}
-  - {fileID: 1351808698428745660}
   - {fileID: 6795088569350088568}
   - {fileID: 5289499292295975848}
   - {fileID: 955200690212689268}
   - {fileID: 3680029842824395300}
   - {fileID: 2823717312765491492}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280687966706724813
 GameObject:
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351808698428745660}
   m_Layer: 0
-  m_Name: EndPosition
+  m_Name: EndPos
   m_TagString: Untagged
   m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
