@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    private Transform player; // Reference to the player's Transform component.
 
+    // This method is called when the script instance is initialized.
+    private void Awake()
+    {
+        // Find the GameObject with the "Player" tag and get its Transform component.
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    // This method is called in the LateUpdate phase, ensuring it runs after player movement.
     private void LateUpdate()
     {
-        // it takes the new position of x and y but the z position remains the same simply put the camera does not rotate with the player
+        // Set the camera's position to match the player's X and Y position, maintaining its Z position.
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
     }
 }
