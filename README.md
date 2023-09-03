@@ -34,7 +34,7 @@ Before installing and running the game, ensure that you have the following softw
 
 3. Enjoy the game!
 
-**The latest build**: [Download](https://1drv.ms/f/s!ArIO-MD88Fjfg5wqBXvNWj4B_HDo7g?e=ydPZ6B)
+**The latest build**: [Download](https://1drv.ms/f/s!ArIO-MD88Fjfg51l2bwO3TGQnk4SJA?e=38p8v5)
 
 ---
 
