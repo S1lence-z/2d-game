@@ -21,6 +21,7 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     private bool doubleJumpReady = false;
     private bool playerDoubleJumped = false;
     private bool isMovingLeft = false;
+    private bool movementStarted = false;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 14f;
@@ -51,6 +52,10 @@ public class InfinitePlayerMovement : MonoBehaviour, IMovement
     {
         // Horizontal movement
         if (Input.GetKeyDown(KeyCode.S))
+        {
+            movementStarted = true;
+        }
+        else if (movementStarted && !isMovingLeft)
         {
             MoveToTheRight();
         }
